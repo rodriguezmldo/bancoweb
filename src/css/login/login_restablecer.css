@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+    padding: 20px;
+    margin-top: 5%;
+}
+
+
+.contenedor_principal {
+    border: 2px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 3% auto; 
+    background: white;
+    position: relative; 
+    margin-top: 60px; 
+
+}
+
+.candado{
+    position: absolute;
+    top: 13%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto; 
+    background-color: #ccc;
+    width: fit-content; 
+    padding: 1em;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.candado img{
+    height: 4em;
+    display: block;
+}
+
+
+.log_res_titule h1 {
+    color: black;
+    text-align: center;
+    font-size: 3em;
+    margin: 1em auto;
+}
+
+.instrucciones {
+    margin-bottom: 30px;
+    margin-left: 55px;
+}
+
+.instrucciones ol{
+    margin-left: 60px;
+}
+
+
+.contenedor_formularios {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+.pedir_correo, 
+.pedir_nueva_contraseña {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.bottoms {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.bottoms button{
+    padding: 0.5em;
+    border: #ccc;
+    border-radius: 3px;
+}

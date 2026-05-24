@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferir</title>
+    <link rel="stylesheet" href="../../css/operaciones/depositar.css">
+    <link rel="stylesheet" href="../../css/operaciones/operaciones.css">
+    <link rel="stylesheet" href="../../css/estilos_globales/nav_pages.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/7939/7939990.png" type="image/x-icon">
+</head>
+<body>
+
+    <nav class="nav_operaciones">
+        <ul>
+            <li><a href="depositar.html">Depositar</a></li>
+            <li><a href="transferir.html">Transferir</a></li>
+            <li><a href="retirar.html">Retirar</a></li>
+            <li><a href="../servicios/pago_servicios.html">Pago de Servicios</a></li>
+        </ul>
+    </nav>
+
+    <h1>Transferir</h1>
+
+    <div class="contenedor_principal">
+        <div class="contenedor_formulario">
+            <div class="fondos">
+                <img src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt="">
+                <p>764,52324</p>
+            </div>
+            <div class="tranferencia_form">
+                <form id="formTransferencia" action="#" method="POST">
+                    <div class="campo">
+                        <label for="cuentaOrigen">Cuenta de origen</label>
+                        <select id="cuentaOrigen" name="cuentaOrigen" required>
+                            <option value="">Selecciona una cuenta</option>
+                            <option value="1234">**** 1234 - Débito</option>
+                            <option value="5678">**** 5678 - Crédito</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="cuentaDestino">Cuenta destino (CLABE o tarjeta)</label>
+                        <input type="text" id="cuentaDestino" name="cuentaDestino" 
+                               placeholder="Ej: 1234 5678 9012 3456" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="monto">Monto a transferir</label>
+                        <input type="number" id="monto" name="monto" 
+                               placeholder="$0.00" step="0.01" min="1" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="concepto">Concepto (opcional)</label>
+                        <input type="text" id="concepto" name="concepto" 
+                               placeholder="Ej: Pago, regalo, etc.">
+                    </div>
+
+                    <div class="botones_form">
+                        <button type="button" id="btnGuardarContacto" class="btn_guardar">
+                            Guardar contacto
+                        </button>
+                        <button type="submit" id="btnEnviarTransferencia" class="btn_enviar">
+                            Enviar transferencia
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="contactos">
+            <div class="buscador_contactos">
+                <label for="buscadorContacto">A quién quieres transferir</label>
+                <input type="text" id="buscadorContacto" name="buscadorContacto" 
+                       placeholder="Buscar por nombre, teléfono o cuenta..." 
+                       autocomplete="off">
+                
+
+                <div id="listaContactos" class="lista_contactos">
+                    
+                    <div class="sin_contactos">
+                        <p>No hay contactos guardados</p>
+                        <p class="texto_pequeno">Completa el formulario y presiona "Guardar contacto"</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav_pages">
+        <ul>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

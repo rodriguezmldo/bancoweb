@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depositar</title>
+    <link rel="stylesheet" href="../../css/operaciones/depositar.css">
+    <link rel="stylesheet" href="../../css/operaciones/operaciones.css">
+    <link rel="stylesheet" href="../../css/estilos_globales/nav_pages.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/7939/7939832.png" type="image/x-icon">
+</head>
+<body>
+
+    <nav class="nav_operaciones">
+        <ul>
+            <li><a href="depositar.html">Depositar</a></li>
+            <li><a href="transferir.html">Transferir</a></li>
+            <li><a href="retirar.html">Retirar</a></li>
+            <li><a href="../servicios/pago_servicios.html">Pago de Servicios</a></li>
+        </ul>
+    </nav>
+
+    <h1>Depositar</h1>
+
+    <div class="contenedor_principal">
+        <!-- Tarjeta de crédito/débito -->
+        <div class="tarjeta">
+            <div >
+                <img src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt="">
+                <p>$765,760 <span class="moneda">/mo</span></p>
+            </div>
+            <div>
+                <p>**** 2311</p>
+                <img src="https://cdn-icons-png.flaticon.com/128/196/196578.png" alt="tarjeta icono" class="icono_tarjeta">
+            </div>
+        </div>
+
+        <div class="contenedor_mas_info">
+            
+            <div class="info_bloque">
+                <h2>Por transferencia:</h2>
+                <label>Clave Interbancaria (CLABE)</label>
+                <div class="copy_container">
+                    <p class="clabe_numero">7492 9283 9393 8392</p>
+                    <button class="btn_copy" onclick="copiarCLABE()">
+                        <img src="https://cdn-icons-png.flaticon.com/128/54/54702.png" alt="copy">
+                        <span>Copiar</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div><h2>Deposito de Efectivo en Surcursales o Tiendas OXXO</h2></div>
+            <div class="info_bloque">
+                <h3>Sucursales cercanas:</h3>
+                <a href="https://www.google.com/maps/search/BBVA+sucursales+cercanas" target="_blank" class="maps_link">
+                    Ver en Google Maps
+                </a>
+            </div>
+
+            <div class="info_bloque">
+                <h3>Tiendas OXXO cercanas:</h3>
+                <a href="https://www.google.com/maps/search/OXXO+cercanos" target="_blank" class="maps_link">
+                    Ver en Google Maps
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <nav class="nav_pages">
+        <ul>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

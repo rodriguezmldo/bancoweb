@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reestablecer Contraseña</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/icon/curve-arrow.png">
+    <link rel="stylesheet" href="../../css/login/login_restablecer.css">
+</head>
+<body>
+
+    <div class="candado">
+        <img src="https://cdn-icons-png.flaticon.com/128/641/641693.png" alt="candado">
+    </div>
+    <div class="contenedor_principal">
+
+        <div class="log_res_titule">
+            <h1>Restablecer Contraseña</h1>
+        </div>
+        
+        <div class="instrucciones">
+            <p><span>Para restablecer su contraseña siga los siguientes pasos: </span></p>
+            <ol>
+                <li>Introduzca su correo y presione continuar</li>
+                <li>Acceda al link de acceso proporcionado</li>
+                <li>Introduzca nueva contraseña</li>
+            </ol>
+        </div>
+
+        <div class="contenedor_formularios">
+            
+            <div class="pedir_correo">
+                <form id="formSolicitarCorreo" action="#" method="POST">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                    <div class="bottoms">
+                        <button type="button" id="btnCancelarCorreo">Cancel</button>
+                        <button type="submit" id="btnSolicitarReset">Reestablecer</button>
+                    </div>
+                </form>
+            </div>
+
+            
+            <div class="pedir_nueva_contraseña">
+                <form id="formNuevaPassword" action="#" method="POST">
+                    <label for="nuevaPassword">Nueva Contraseña</label>
+                    <input type="password" id="nuevaPassword" name="nuevaPassword" placeholder="*******" required>
+                    <div class="bottoms">
+                        <button type="button" id="btnCancelarPassword">Cancel</button>
+                        <button type="submit" id="btnGuardarPassword">Reestablecer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -19,7 +19,7 @@ body {
     max-width: 450px;
     padding: 50px 40px 40px;
     border: 2px solid #e0e0e0;
-    position: relative; /* para posicionar el candado */
+    position: relative; 
     text-align: center;
 }
 
