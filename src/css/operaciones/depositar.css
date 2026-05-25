@@ -1,6 +1,8 @@
 .contenedor_principal{
     display: flex;
     justify-content: space-around;
+    align-self: center;
+    align-items: center;
 }
 
 .tarjeta {
@@ -21,12 +23,12 @@
 .tarjeta > div:first-child {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10em;
 }
 
 .tarjeta #eye_img {
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     filter: brightness(0) invert(1); 
     cursor: pointer;
 }
@@ -52,19 +54,19 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 15px;
+    gap: 10em;
 }
 
 .tarjeta > div:last-child p {
-    font-size: 1.2rem;
+    font-size: 2rem;
     letter-spacing: 2px;
     margin: 0;
     font-family: monospace;
 }
 
 .tarjeta #visa_img {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     filter: brightness(0) invert(1); 
 }
 
@@ -107,4 +109,12 @@
     height: 2em;
     width: 2em;
     position: relative;
+}
+
+.title_operations{
+    display: flex;
+    justify-content: center;
+    color: blue;
+    font-size: 1.5em;
+
 }
