@@ -1,11 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio Bancario</title>
+    <link rel="stylesheet" href="./css/indexHome.css">
+    <link rel="stylesheet" href="./css/operaciones/tarjeta.css">
+    <link rel="stylesheet" href="./css/estilos_globales/nav_pages.css">
 </head>
 <body>
-    
+
+    <main class="dashboard">
+        <header class="header-section">
+            <h1>Sea Bienvenido!!</h1>
+            <p class="subtitle">Tú tienes el control, (USUARIO). Nosotros solo te ayudamos.</p>
+        </header>
+
+        <div class="contenedor_principal">
+            
+            <div class="tarjeta">
+                <div>
+                    <img id="eye_img" src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt="Ocultar">
+                    <p>**** 2311</p>
+                </div>
+                <div>
+                    <p>$765,760 <span class="moneda">/mo</span></p>
+                    <img id="visa_img" src="https://cdn-icons-png.flaticon.com/128/196/196578.png" alt="tarjeta icono" class="icono_tarjeta">
+                </div>
+            </div>
+
+            <div class="services-panel">
+                <h3>Servicios Populares</h3>
+                <ul class="services-grid">
+                    <li>
+                        <img src="https://cdn-icons-png.flaticon.com/128/702/702814.png" alt="Luz">
+                        <span>Luz</span>
+                    </li>
+                    <li>
+                        <img src="https://cdn-icons-png.flaticon.com/128/3105/3105761.png" alt="Agua">
+                        <span>Agua</span>
+                    </li>
+                    <li>
+                        <img src="https://cdn-icons-png.flaticon.com/128/4833/4833013.png" alt="Gas">
+                        <span>Gas</span>
+                    </li>
+                    <li>
+                        <img src="https://cdn-icons-png.flaticon.com/128/8266/8266804.png" alt="Recarga">
+                        <span>Recarga Mobile</span>
+                    </li>
+                    <li>
+                        <img src="https://cdn-icons-png.flaticon.com/128/748/748151.png" alt="Internet">
+                        <span>Internet</span>
+                    </li>
+                    <li>
+                        <img src="https://cdn-icons-png.flaticon.com/128/2950/2950660.png" alt="TV">
+                        <span>TV Paga</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="cards-section">
+            <h2>Control de Tarjetas</h2>
+            <p class="subtitle text-center">Para ver más información sobre las tarjetas presione en "Ver más detalles".</p>
+        </section>
+
+        <div class="btn-container">
+            <button class="btn-estadoCuenta">Estado de Cuenta</button>
+        </div>
+
+    </main>
+
+    <nav class="nav_pages">
+        <ul>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
+        </ul>
+    </nav>
 </body>
 </html>
