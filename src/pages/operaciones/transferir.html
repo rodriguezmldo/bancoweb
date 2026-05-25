@@ -15,23 +15,30 @@
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/7939/7939990.png" type="image/x-icon">
 </head>
 <body>
-
-    <nav class="nav_operaciones">
+    
+    <nav class="nav_pages">
+        <div class="logo_banco">
+            <img src="https://cdn-icons-png.flaticon.com/128/1018/1018197.png" alt="bank">
+            <span>BBMN</span>
+        </div>
+    
         <ul>
-            <li><a href="depositar.html">Depositar</a></li>
-            <li><a href="transferir.html">Transferir</a></li>
-            <li><a href="retirar.html">Retirar</a></li>
-            <li><a href="../servicios/pago_servicios.html">Pago de Servicios</a></li>
+            <li><a href="#" class="active"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
         </ul>
     </nav>
 
+    
     <div class="title_operations"><h1>Transferir</h1></div>
-
+    
     <div class="contenedor_principal">
         
-
+        
         <div class="contenedor_formulario">
-
+            
             <div class="tarjeta">
                 <div >
                     <img id="eye_img" src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt="">
@@ -42,7 +49,7 @@
                     <img id="visa_img" src="https://cdn-icons-png.flaticon.com/128/196/196578.png" alt="tarjeta icono" class="icono_tarjeta">
                 </div>
             </div>
-
+            
             <div class="tranferencia_form">
                 <form id="formTransferencia" action="#" method="POST">
                     <div class="campo">
@@ -53,25 +60,25 @@
                             <option value="5678">**** 5678 - Crédito</option>
                         </select>
                     </div>
-
+                    
                     <div class="campo">
                         <label for="cuentaDestino">Cuenta destino (CLABE o tarjeta)</label>
                         <input type="text" id="cuentaDestino" name="cuentaDestino" 
-                               placeholder="Ej: 1234 5678 9012 3456" required>
+                        placeholder="Ej: 1234 5678 9012 3456" required>
                     </div>
-
+                    
                     <div class="campo">
                         <label for="monto">Monto a transferir</label>
                         <input type="number" id="monto" name="monto" 
-                               placeholder="$0.00" step="0.01" min="1" required>
+                        placeholder="$0.00" step="0.01" min="1" required>
                     </div>
-
+                    
                     <div class="campo">
                         <label for="concepto">Concepto (opcional)</label>
                         <input type="text" id="concepto" name="concepto" 
-                               placeholder="Ej: Pago, regalo, etc.">
+                        placeholder="Ej: Pago, regalo, etc.">
                     </div>
-
+                    
                     <div class="botones_form">
                         <button type="button" id="btnGuardarContacto" class="btn_guardar">
                             Guardar contacto
@@ -83,33 +90,32 @@
                 </form>
             </div>
         </div>
-
+        
         <div class="contactos">
             <div class="buscador_contactos">
                 <label for="buscadorContacto">A quién quieres transferir</label>
                 <input type="text" id="buscadorContacto" name="buscadorContacto" 
-                       placeholder="Buscar por nombre, teléfono o cuenta..." 
-                       autocomplete="off">
+                placeholder="Buscar por nombre, teléfono o cuenta..." 
+                autocomplete="off">
             </div>    
-
+            
             <div id="listaContactos" class="lista_contactos">
                 <div class="sin_contactos">
-                        <p>No hay contactos guardados</p>
-                        <p class="texto_pequeno">Completa el formulario y presiona "Guardar contacto"</p>
+                    <p>No hay contactos guardados</p>
+                    <p class="texto_pequeno">Completa el formulario y presiona "Guardar contacto"</p>
                 </div>
             </div>
         </div>
     </div>
-
-    <nav class="nav_pages">
+    
+    <nav class="nav_operaciones">
         <ul>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
+            <li><a href="depositar.html">Depositar</a></li>
+            <li><a href="transferir.html">Transferir</a></li>
+            <li><a href="retirar.html">Retirar</a></li>
+            <li><a href="../servicios/pago_servicios.html">Pago de Servicios</a></li>
         </ul>
     </nav>
-
+    
 </body>
 </html>

@@ -11,16 +11,23 @@
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/7939/7939990.png" type="image/x-icon">
 </head>
 <body>
-
-    <nav class="nav_operaciones">
+    
+    <nav class="nav_pages">
+        <div class="logo_banco">
+            <img src="https://cdn-icons-png.flaticon.com/128/1018/1018197.png" alt="bank">
+            <span>BBMN</span>
+        </div>
+    
         <ul>
-            <li><a href="../operaciones/depositar.html">Depositar</a></li>
-            <li><a href="../operaciones/transferir.html">Transferir</a></li>
-            <li><a href="../operaciones/retirar.html">Retirar</a></li>
-            <li><a href="pago_servicios.html">Pago de Servicios</a></li>
+            <li><a href="#" class="active"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
         </ul>
     </nav>
 
+    
     <div>
         <div><h1>Pago de Servicios</h1></div>
         <div class="tarjeta">
@@ -34,11 +41,11 @@
             </div>
         </div>
     </div>
-
+    
     <div class="contenedor principal">
         <div class="contenedor_form">
             <h2>Por favor rellene el formulario</h2>
-
+            
             <div class="campo">
                 <label for="">Seleccione el metodo de pago:</label>
                 <select id="cuentaOrigen" name="cuentaOrigen" required>
@@ -47,7 +54,7 @@
                     <option value="5678">**** 5678 - Crédito</option>
                 </select>
             </div>
-        
+            
             <div class="campo">
                 <label for="">Servicio</label>
                 <select id="cuentaOrigen" name="cuentaOrigen" required>
@@ -58,16 +65,16 @@
                     <option value="recarga">Recarga Tiempo Aire</option>
                 </select>
             </div>
-        
+            
             <div class="campo">
                 <p> Pago de servicio de {variable de servicio seleccionado}</p>
             </div>
-        
+            
             <div class="campo">
                 <label for="">Monto</label>
                 <input type="text">
             </div>
-        
+            
             <div class="botones_form">
                 <button type="button" id="btnGuardarServicio" class="btn_guardar">
                     Guardar contacto
@@ -77,7 +84,7 @@
                 </button>
             </div>
         </div>
-
+        
         <div class="">
             <h3>Servicios Populares</h3>
             <div>
@@ -90,16 +97,15 @@
             </div>
         </div>
     </div>
-
-    <nav class="nav_pages">
+    
+    <nav class="nav_operaciones">
         <ul>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
+            <li><a href="../operaciones/depositar.html">Depositar</a></li>
+            <li><a href="../operaciones/transferir.html">Transferir</a></li>
+            <li><a href="../operaciones/retirar.html">Retirar</a></li>
+            <li><a href="pago_servicios.html">Pago de Servicios</a></li>
         </ul>
     </nav>
-
+    
 </body>
 </html>

@@ -1,49 +1,75 @@
 
-.nav_pages{
-    display: flex;
-    margin: 20px 10px;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-.nav_pages ul{
+.nav_pages {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2f2f33;
+    padding: 1% 4%;
+}
+
+.nav_pages .logo_banco {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav_pages .logo_banco img {
+    width: 2em;
+    height: 2em;
+}
+
+.nav_pages .logo_banco span {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.nav_pages ul {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     list-style: none;
-    background-color: #c7c2c2;
-    padding: 8px;
-    max-width: 800px;
-    width: 85%;
-    border: none;
-    border-radius: 50px; 
-    gap: 5px;
-}
- 
-.nav_operaciones li{
-    border: none;
-    background-color: transparent;
-    padding: 10px 16px;
-    border-radius: 40px;
-    transition: all 0.3s ease;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
 }
 
-.nav_pages a{
+.nav_pages li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav_pages a {
     display: flex;
-    flex-direction: column;
-    text-align: center;
+    align-items: center;
     text-decoration: none;
-    color: #f8f0f0;
+    color: #cccccc;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 1.5em;
+    transition: all 0.2s ease;
+    gap: 4px;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.nav_pages a:hover {
+    color: white;
+    background-color: #a4a0a0;
+}
+
+.nav_pages a.active {
+    color: #ffffff;
 }
 
 .nav_pages img {
-    width: 2em;  
-    height: 2em; 
-    object-fit: contain; 
-    display: block;
-    margin: 0 auto; 
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
-
 

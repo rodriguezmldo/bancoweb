@@ -15,19 +15,26 @@
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/7939/7939990.png" type="image/x-icon">
 </head>
 <body>
-
-    <nav class="nav_operaciones">
+    
+    
+    <nav class="nav_pages">
+        <div class="logo_banco">
+            <img src="https://cdn-icons-png.flaticon.com/128/1018/1018197.png" alt="bank">
+            <span>BBMN</span>
+        </div>
+    
         <ul>
-            <li><a href="depositar.html">Depositar</a></li>
-            <li><a href="transferir.html">Transferir</a></li>
-            <li><a href="retirar.html">Retirar</a></li>
-            <li><a href="../servicios/pago_servicios.html">Pago de Servicios</a></li>
+            <li><a href="#" class="active"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
         </ul>
     </nav>
-
+    
     <div class="title_operations"><h1>Retirar</h1></div>
-
-
+    
+    
     <div class="contenedor_principal">
         
         <div class="tarjeta">
@@ -40,7 +47,7 @@
                 <img id="visa_img" src="https://cdn-icons-png.flaticon.com/128/196/196578.png" alt="tarjeta icono" class="icono_tarjeta">
             </div>
         </div>
-
+        
         <div class="contenedor_mas_info">
             <div class="info_bloque">
                 <h2>Sucursales cercanas:</h2>
@@ -52,20 +59,20 @@
                     Ver en Google Maps
                 </a>
             </div>
-
-
-
+            
+            
+            
             <div class="info_bloque" id="retiroSinTarjeta">
                 <h2>Retiro sin tarjeta:</h2>
                 <p>
                     Si no cuenta con su tarjeta, solicite un código de retiro y úselo en cualquier cajero BBVA o ventanilla.
                 </p>
                 
-
+                
                 <button id="btnSolicitarCodigo" class="btn_solicitar">
                     Solicitar código
                 </button>
-
+                
                 <div id="codigoContainer" style="display:none;">
                     <div class="codigo_card">
                         <p class="codigo_label">Tu código de retiro es:</p>
@@ -77,13 +84,13 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <a href="https://www.google.com/maps/search/BBVA+sucursales+cercanas" target="_blank" class="maps_link">
                     Ver sucursales cercanas
                 </a>
             </div>
-
-
+            
+            
             <div class="info_bloque">
                 <h3>Tiendas OXXO cercanas:</h3>
                 <p>
@@ -96,16 +103,15 @@
             </div>
         </div>
     </div>
-
-    <nav class="nav_pages">
+    
+    
+    <nav class="nav_operaciones">
         <ul>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
+            <li><a href="depositar.html">Depositar</a></li>
+            <li><a href="transferir.html">Transferir</a></li>
+            <li><a href="retirar.html">Retirar</a></li>
+            <li><a href="../servicios/pago_servicios.html">Pago de Servicios</a></li>
         </ul>
     </nav>
-
 </body>
 </html>

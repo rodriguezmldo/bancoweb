@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-around;
     list-style: none;
-    background-color: #c7c2c2;
+    background-color: #333132;
     max-width: 800px;
     padding: 8px;
     width: 85%;
@@ -30,7 +30,7 @@
 }
 
 .nav_operaciones li:hover {
-    background-color: #2a2929;
+    background-color: #565151;
     color: #ffffff;
 }
 
@@ -53,8 +53,10 @@
 
 .title_operations{
     display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     justify-content: center;
-    color: blue;
+    color: rgb(47, 52, 45);
+    font-weight: 500;
     font-size: 1.5em;
 
 }
@@ -69,5 +71,6 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+
 
 
