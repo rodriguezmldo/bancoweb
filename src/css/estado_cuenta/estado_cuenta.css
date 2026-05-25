@@ -1,0 +1,163 @@
+/* --- CONFIGURACIÓN BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #111;
+    padding-bottom: 120px;
+}
+
+.estado-cuenta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+    
+.estado-cuenta-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+.estado-cuenta-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.estado-cuenta-header h1 {
+    font-size: clamp(28px, 5vw, 36px);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.estado-cuenta-frases p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+    background-color: #f4f6f8;
+    padding: 10px 15px;
+    border-left: 4px solid #7c889a;
+    border-radius: 4px;
+    max-width: 800px;
+}
+
+
+.ec-info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.info-card {
+    flex: 1 1 300px; 
+    border: 1px solid #6b6969;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.02);
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.card-title h3 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.card-content .data-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #eee;
+}
+
+.card-content .data-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.card-content .data-row span {
+    color: #666;
+}
+
+.total-row {
+    margin-top: 10px;
+    padding-top: 10px !important;
+    border-top: 2px solid #ccc !important;
+    font-size: 14px !important;
+}
+
+.estado-cuenta-table-section {
+    border: 1px solid #6b6969;
+    border-radius: 8px;
+    padding: 25px;
+    background-color: #eb0000;
+    
+}
+
+.table-header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.table-header-title h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; 
+}
+
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; 
+}
+
+.transactions-table th, 
+.transactions-table td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 13px;
+    border-bottom: 1px solid #a3a3a3;
+}
+
+.transactions-table th {
+    color: black;
+    font-weight: 500;
+    background-color: #b1b1b1;
+}
+
+.transactions-table td {
+    color: #333;
+}
+
