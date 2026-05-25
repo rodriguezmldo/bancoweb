@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta</title>
+    <link rel="stylesheet" href="../../css/cuenta/cuenta.css">
+    <link rel="stylesheet" href="../../css/estilos_globales/nav_pages.css">
+</head>
+<body>
+
+    <nav class="nav_pages">
+        <div class="logo_banco">
+            <img src="https://cdn-icons-png.flaticon.com/128/1018/1018197.png" alt="bank">
+            <span>BBMN</span>
+        </div>
+    
+        <ul>
+            <li><a href="#" class="active"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="account-container">
+        <h1 class="title-principal">Cuenta</h1>
+
+        <section class="personal-info-section">
+            <h2>Información personal</h2>
+            
+            <div class="info-layout">
+                <div class="info-content">
+                    <p class="info-text">
+                        Administra tu información personal, incluyendo tus datos de contacto y perfil. Mantener esta información actualizada nos ayuda a proteger tu cuenta y asegurar que recibas todas las notificaciones importantes sobre tus movimientos.
+                    </p>
+
+                    <div class="basic-info-box">
+                        <label>Tu cuenta cuenta con la información básica</label>
+                        <div class="input-progress">
+                            <input type="text" value="*************************" disabled class="input-progress-circle">
+                            <div class="progress">
+                                <span class="dot filled"></span>
+                                <span class="dot filled"></span>
+                                <span class="dot empty"></span>
+                                <span class="dot empty"></span>
+                                <span class="dot empty"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="info-text">
+                        Tus datos están protegidos bajo los más altos estándares de seguridad y encriptación. Puedes solicitar la actualización de tu domicilio o número telefónico desde la aplicación móvil o acudiendo a tu sucursal más cercana.
+                    </p>
+                </div>
+
+                <div class="avatar">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1177/1177568.png" alt="Avatar Usuario" class="avatar-image">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="login-security-section">
+            <h2>Inicio de sesión</h2>
+            <p class="subtitle">Resumen general de tu cuenta</p>
+
+            <div class="security-cards-grid">
+                
+                <div class="security-card">
+                    <div class="card-header">
+                        <img src="https://cdn-icons-png.flaticon.com/128/665/665049.png" alt="info" width="20" height="20">
+                        <h3>Credenciales</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="data-label">Usuario/Correo</p>
+                        <p class="data-label">Contraseña</p>
+                        <button class="btn-outline">Cambiar contraseña</button>
+                    </div>
+                </div>
+
+                <div class="security-card">
+                    <div class="card-header">
+                        <img src="https://cdn-icons-png.flaticon.com/128/665/665049.png" alt="info" width="20" height="20">
+                        <h3>Preferencias de inicio de sesión</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="preferences-list">
+                            <li>Notificaciones de inicio de sesión</li>
+                            <li>Verificación adicional</li>
+                            <li>Recordar dispositivos confiables</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-access-section">
+                <div class="card-header">
+                    <img src="https://cdn-icons-png.flaticon.com/128/665/665049.png" alt="info" width="20" height="20">
+                    <h3>Accesos recientes</h3>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="access-table">
+                        <thead>
+                            <tr>
+                                <th>Dispositivo <img src="https://cdn-icons-png.flaticon.com/128/2985/2985150.png" alt="flecha" width="12" height="12"></th>
+                                <th>Ubicación <img src="https://cdn-icons-png.flaticon.com/128/2985/2985150.png" alt="flecha" width="12" height="12"></th>
+                                <th>Fecha y hora <img src="https://cdn-icons-png.flaticon.com/128/2985/2985150.png" alt="flecha" width="12" height="12"></th>
+                                <th>Estado <img src="https://cdn-icons-png.flaticon.com/128/2985/2985150.png" alt="flecha" width="12" height="12"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Machenike L16S Windows</td>
+                                <td>Puebla, México</td>
+                                <td>25/05/2026 13:00</td>
+                                <td>Activo</td>
+                            </tr>
+                            <tr>
+                                <td>Motorola Moto G84</td>
+                                <td>Puebla, México</td>
+                                <td>25/05/2026 09:15</td>
+                                <td>Inactivo</td>
+                            </tr>
+                            <tr>
+                                <td>Ubuntu WSL</td>
+                                <td>Puebla, México</td>
+                                <td>24/05/2026 18:45</td>
+                                <td>Inactivo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer-actions">
+                    <button class="btn-close-sessions">Cerrar todas las sesiones</button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
