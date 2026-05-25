@@ -1,21 +1,29 @@
 body {
     background-color: #ffffff;
     color: #111;
+    margin: 0;
+    padding: 0;
 }
 
+
 h1 { 
-    font-size: 42px;
+    font-size: clamp(28px, 8vw, 42px);
+    padding: 0 16px;
+    margin-left: 35px;
 }
 
 h2 { 
-    font-size: 28px; 
+    font-size: clamp(22px, 6vw, 28px); 
     text-align: center; 
 }
 
 .subtitle {
-    font-size: 20px;
+    font-size: clamp(14px, 5vw, 20px);
     color: #666;
     margin-bottom: 20px;
+    padding: 0 16px;
+    margin-left: 35px;
+    
 }
 
 .text-center { 
@@ -24,17 +32,21 @@ h2 {
 
 .contenedor_principal {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
     align-items: flex-start;
+    gap: clamp(30px, 8vw, 250px);
+    padding: 0 16px;
+    max-width: 1400px; 
+    margin: 0 auto; 
 }
-
 
 
 .btn-container { 
     margin-top: 20px; 
-    align-items: center;
-    text-align: center;  
-        
+    text-align: center;
+    padding: 0 16px;
 }
 
 .btn-estadoCuenta {
@@ -42,10 +54,10 @@ h2 {
     background-color: #e0e0e0;
     border: 1px solid #ccc;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: clamp(12px, 4vw, 13px);
     font-weight: 500;
     cursor: pointer;
+    width: auto;
+    max-width: 90%;
 }
-
-
 
