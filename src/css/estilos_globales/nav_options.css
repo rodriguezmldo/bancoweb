@@ -1,5 +1,5 @@
 
-.nav_operaciones{
+.nav_options{
     display: flex;
     margin: 20px 10px;
     padding: 10px;
@@ -7,7 +7,7 @@
     justify-content: center;
 }
 
-.nav_operaciones ul{
+.nav_options ul{
     display: flex;
     justify-content: space-around;
     list-style: none;
@@ -20,7 +20,7 @@
     gap: 5px;
 }
 
-.nav_operaciones li {
+.nav_options li {
     border: none;
     background-color: transparent;
     padding: 10px 16px;
@@ -29,20 +29,20 @@
     cursor: pointer;
 }
 
-.nav_operaciones li:hover {
+.nav_options li:hover {
     background-color: #565151;
     color: #ffffff;
 }
 
-.nav_operaciones li.activo {
+.nav_options li.activo {
     background-color: #000000;
 }
 
-.nav_operaciones li.activo a {
+.nav_options li.activo a {
     color: #ffffff;
 }
 
-.nav_operaciones a {
+.nav_options a {
     text-decoration: none;
     color: #f8f0f0;
     font-weight: 500;
