@@ -5,7 +5,6 @@ body {
     padding: 0;
 }
 
-
 h1 { 
     font-size: clamp(28px, 8vw, 42px);
     padding: 0 16px;
