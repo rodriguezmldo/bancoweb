@@ -1,0 +1,110 @@
+.contenedor_principal{
+    display: flex;
+    justify-content: space-around;
+}
+
+.tarjeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+    min-width: 200px;
+    max-width: 500px;
+    min-height: 200px;
+    background: #0a192f; 
+    border-radius: 16px;
+    padding: 1.5em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.tarjeta > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tarjeta #eye_img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1); 
+    cursor: pointer;
+}
+
+.tarjeta #eye_img:hover {
+    opacity: 0.7;
+}
+
+
+.tarjeta > div:first-child p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.tarjeta .moneda {
+    font-size: 0.9rem;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+.tarjeta > div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.tarjeta > div:last-child p {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin: 0;
+    font-family: monospace;
+}
+
+.tarjeta #visa_img {
+    width: 45px;
+    height: 45px;
+    filter: brightness(0) invert(1); 
+}
+
+
+.contenedor_principal {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.contenedor_mas_info{
+    display:block;
+    border: solid #ccc 2px;
+    padding: 2%;
+}
+
+.copy_container{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    border: solid #ccc 2px;
+    border-radius: 15px;
+}
+
+.btn_copy{
+    display: flex;
+    width: 25%;
+    height: 25%;
+    align-items: center;
+    border: solid #ccc 2px;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 3px 5px;
+}
+
+.btn_copy img{
+    height: 2em;
+    width: 2em;
+    position: relative;
+}
