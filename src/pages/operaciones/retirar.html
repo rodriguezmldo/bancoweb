@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retirar</title>
     <link rel="stylesheet" href="../../css/operaciones/retirar.css">
+    <link rel="stylesheet" href="../../css/operaciones/depositar.css">
+    <link rel="stylesheet" href="../../css/operaciones/tarjeta.css">
     <link rel="stylesheet" href="../../css/operaciones/operaciones.css">
     <link rel="stylesheet" href="../../css/estilos_globales/nav_pages.css">
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/7939/7939990.png" type="image/x-icon">
@@ -20,25 +22,25 @@
         </ul>
     </nav>
 
-    <h1>Retirar</h1>
+    <div class="title_operations"><h1>Retirar</h1></div>
+
 
     <div class="contenedor_principal">
         
         <div class="tarjeta">
-            <div>
-                <img src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt="">
-                <p>$765,760 <span class="moneda">/mo</span></p>
+            <div >
+                <img id="eye_img" src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt="">
+                <p>**** 2311</p>
             </div>
             <div>
-                <p>**** 2311</p>
-                <img src="https://cdn-icons-png.flaticon.com/128/196/196578.png" alt="tarjeta icono" class="icono_tarjeta">
+                <p>$765,760 <span class="moneda">/mo</span></p>
+                <img id="visa_img" src="https://cdn-icons-png.flaticon.com/128/196/196578.png" alt="tarjeta icono" class="icono_tarjeta">
             </div>
         </div>
 
         <div class="contenedor_mas_info">
-                        
             <div class="info_bloque">
-                <h3>Sucursales cercanas:</h3>
+                <h2>Sucursales cercanas:</h2>
                 <p>
                     Realice su retiro através de sucursales cercanas, ya sean en ventanilla o cajero automatico, 
                     disponga de su tarjeta
@@ -51,7 +53,7 @@
 
 
             <div class="info_bloque" id="retiroSinTarjeta">
-                <h3>Retiro sin tarjeta:</h3>
+                <h2>Retiro sin tarjeta:</h2>
                 <p>
                     Si no cuenta con su tarjeta, solicite un código de retiro y úselo en cualquier cajero BBVA o ventanilla.
                 </p>
@@ -61,7 +63,7 @@
                     Solicitar código
                 </button>
 
-                <div id="codigoContainer" style="display:block;">
+                <div id="codigoContainer" style="display:none;">
                     <div class="codigo_card">
                         <p class="codigo_label">Tu código de retiro es:</p>
                         <p class="codigo_numero" id="codigoGenerado">XXXX-XXXX-XXXX</p>
@@ -70,6 +72,7 @@
                             <button id="btnDescargarPDF" class="btn_pdf"> Descargar PDF</button>
                             <button id="btnCopiarCodigo" class="btn_copiar"> Copiar código</button>
                         </div>
+                    </div>
                 </div>
 
                 <a href="https://www.google.com/maps/search/BBVA+sucursales+cercanas" target="_blank" class="maps_link">
@@ -88,7 +91,6 @@
                     Ver en Google Maps
                 </a>
             </div>
-
         </div>
     </div>
 

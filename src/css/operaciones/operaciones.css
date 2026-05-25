@@ -51,4 +51,10 @@
 }
 
 
+.title_operations{
+    display: flex;
+    justify-content: center;
+    color: blue;
+    font-size: 1.5em;
 
+}
