@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transferir</title>
+    
+    <link rel="stylesheet" href="../../css/estilos_globales/tarjeta.css">
+
+    <link rel="stylesheet" href="../../css/operaciones/operaciones.css">
     <link rel="stylesheet" href="../../css/operaciones/transferencia.css">
 
-    <link rel="stylesheet" href="../../css/operaciones/tarjeta.css">
-    <link rel="stylesheet" href="../../css/operaciones/operaciones.css">
-    <link rel="stylesheet" href="../../css/operaciones/depositar.css">
     <link rel="stylesheet" href="../../css/estilos_globales/nav_pages.css">
+
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/7939/7939990.png" type="image/x-icon">
 </head>
 <body>
@@ -23,21 +25,24 @@
         </ul>
     </nav>
 
-    <h1>Transferir</h1>
+    <div class="title_operations"><h1>Transferir</h1></div>
 
     <div class="contenedor_principal">
-        <div class="tarjeta">
-            <div >
-                <img id="eye_img" src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt="">
-                <p>**** 2311</p>
-            </div>
-            <div>
-                <p>$765,760 <span class="moneda">/mo</span></p>
-                <img id="visa_img" src="https://cdn-icons-png.flaticon.com/128/196/196578.png" alt="tarjeta icono" class="icono_tarjeta">
-            </div>
-        </div>
+        
 
-        <div class="contenedor_mas_info">
+        <div class="contenedor_formulario">
+
+            <div class="tarjeta">
+                <div >
+                    <img id="eye_img" src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt="">
+                    <p>**** 2311</p>
+                </div>
+                <div>
+                    <p>$765,760 <span class="moneda">/mo</span></p>
+                    <img id="visa_img" src="https://cdn-icons-png.flaticon.com/128/196/196578.png" alt="tarjeta icono" class="icono_tarjeta">
+                </div>
+            </div>
+
             <div class="tranferencia_form">
                 <form id="formTransferencia" action="#" method="POST">
                     <div class="campo">
@@ -85,14 +90,13 @@
                 <input type="text" id="buscadorContacto" name="buscadorContacto" 
                        placeholder="Buscar por nombre, teléfono o cuenta..." 
                        autocomplete="off">
-                
+            </div>    
 
-                <div id="listaContactos" class="lista_contactos">
-                    
-                    <div class="sin_contactos">
+            <div id="listaContactos" class="lista_contactos">
+                <div class="sin_contactos">
                         <p>No hay contactos guardados</p>
                         <p class="texto_pequeno">Completa el formulario y presiona "Guardar contacto"</p>
-                    </div>
+                </div>
             </div>
         </div>
     </div>

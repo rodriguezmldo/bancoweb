@@ -1,0 +1,214 @@
+.contenedor_mas_info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: 55%;
+}
+
+/* Cada bloque de información */
+.info_bloque {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 20px;
+    margin-bottom: 5px;
+}
+
+.info_bloque:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.info_bloque h2,
+.info_bloque h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info_bloque p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+/* Labels dentro de info_bloque */
+.info_bloque label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #666;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Contenedor del CLABE con botón copiar */
+.copy_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    transition: all 0.2s ease;
+}
+
+.copy_container:hover {
+    border-color: #999;
+    background-color: #fff;
+}
+
+.clabe_numero {
+    font-family: monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* Botón copiar */
+.btn_copy {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn_copy:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+    transform: scale(0.98);
+}
+
+.btn_copy img {
+    width: 18px;
+    height: 18px;
+    position: static;
+}
+
+.btn_copy span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Links de Google Maps */
+.maps_link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #f0f0f0;
+    color: #1a73e8;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 8px;
+    transition: all 0.2s ease;
+    width: fit-content;
+}
+
+.maps_link:hover {
+    background-color: #e0e0e0;
+    color: #0d5bbd;
+    transform: translateX(2px);
+}
+
+/* Botón de solicitar código (retiro sin tarjeta) */
+.btn_solicitar {
+    background-color: #2b2b2b;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: all 0.2s ease;
+}
+
+.btn_solicitar:hover {
+    background-color: #1a1a1a;
+    transform: scale(0.98);
+}
+
+/* Tarjeta de código generado */
+.codigo_card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 15px 0;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.codigo_label {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.codigo_numero {
+    font-size: 1.5rem;
+    font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+    margin: 10px 0;
+}
+
+.codigo_expiracion {
+    font-size: 0.75rem;
+    color: #e67e22;
+    margin-bottom: 15px;
+}
+
+.codigo_botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn_pdf,
+.btn_copiar {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn_pdf {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn_pdf:hover {
+    background-color: #c0392b;
+}
+
+.btn_copiar {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn_copiar:hover {
+    background-color: #2980b9;
+}

@@ -58,3 +58,16 @@
     font-size: 1.5em;
 
 }
+
+
+.contenedor_principal{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
