@@ -30,7 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
             texto: 'Cuenta',
             submenu: [
                 { nombre: 'Más detalles', url: '/src/pages/cuenta/cuenta.html' },
-                { nombre: 'Cerrar sesión', url: 'logout.html' }
+                { 
+                    nombre: 'Cerrar sesión', 
+                    url: '/src/pages/login/login.html',
+                    esCerrarSesion: true  
+                }
             ]
         },
         {
@@ -69,13 +73,64 @@ document.addEventListener('DOMContentLoaded', function() {
             submenuDiv.innerHTML = `
                 <ul>
                     ${item.submenu.map(sub => `
-                        <li><a href="${sub.url}">${sub.nombre}</a></li>
+                        <li>
+                            <a href="${sub.url}" ${sub.esCerrarSesion ? 'class="cerrar-sesion-btn"' : ''}>
+                                ${sub.nombre}
+                            </a>
+                        </li>
                     `).join('')}
                 </ul>
             `;
 
             li.appendChild(submenuDiv);
         }
+    });
+    
+    // ============================================
+    // FUNCIONALIDAD DE CERRAR SESIÓN
+    // ============================================
+    
+    // Función para cerrar sesión
+    function cerrarSesion() {
+        // Mostrar confirmación opcional
+        if (confirm('¿Estás seguro de que deseas cerrar sesión?')) {
+            // Limpiar todo el localStorage
+            localStorage.clear();
+            
+            // Opcional: limpiar sessionStorage también
+            sessionStorage.clear();
+            
+            console.log('Sesión cerrada - LocalStorage limpiado');
+            
+            // Redirigir a la página de inicio de sesión
+            // CAMBIA ESTA URL POR LA DE TU PÁGINA DE LOGIN
+            window.location.href = '/src/pages/login/login.html'; 
+            
+        }
+    }
+    
+    // Agregar event listeners a los botones de cerrar sesión
+    function agregarEventoCerrarSesion() {
+        const botonesCerrar = document.querySelectorAll('.cerrar-sesion-btn');
+        botonesCerrar.forEach(boton => {
+            boton.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                cerrarSesion();
+            });
+        });
+    }
+    
+    // Inicializar eventos después de crear los elementos
+    setTimeout(agregarEventoCerrarSesion, 100);
+    
+    // También podemos usar MutationObserver para asegurar que los eventos se apliquen
+    const observer = new MutationObserver(function(mutations) {
+        agregarEventoCerrarSesion();
+    });
+    
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
     });
     
     const styles = `
@@ -125,10 +180,23 @@ document.addEventListener('DOMContentLoaded', function() {
             background: transparent;
             border-radius: 0;
             white-space: nowrap;
+            text-decoration: none;
         }
         
         .nav_pages .submenu a:hover {
             background-color: #4a4a4e;
+            color: white;
+        }
+        
+        /* Estilo especial para el botón de cerrar sesión */
+        .nav_pages .submenu .cerrar-sesion-btn {
+            color: #ff6b6b;
+            border-top: 1px solid #4a4a4e;
+            margin-top: 4px;
+        }
+        
+        .nav_pages .submenu .cerrar-sesion-btn:hover {
+            background-color: #ff6b6b;
             color: white;
         }
         
@@ -146,6 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
             font-size: 10px;
             opacity: 0.6;
             transition: transform 0.2s;
+            display: inline-block;
         }
         
         .menu-item:hover > a::after {
