@@ -40,11 +40,13 @@ document.addEventListener('DOMContentLoaded', function() {
             id: 'mas',
             texto: 'Más',
             submenu: [
-                { nombre: 'Quiénes somos', url: 'info/quienes_somos.html' },
+                { nombre: 'Quiénes somos', url: '/src/pages/otros/quienes_somos/quienes_somos.html' },
                 { nombre: 'Soporte', url: 'info/soporte.html' },
                 { nombre: 'Términos y condiciones', url: 'info/terminos.html' }
             ]
         }
+
+        
     ];
 
     // Obtener el ul de la navegación
