@@ -14,16 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const esPaginaPublica = paginasPublicas.some(pagina => currentPage.includes(pagina));
     
-    // Verificamos si existe un usuario logueado en la memoria
+    // login usuario
     const estaLogueado = localStorage.getItem("idUsuarioActivo") !== null;
-    
-    // Si es una página pública Y NO ha iniciado sesión, detenemos el script (no habrá submenús)
-    // Si SÍ ha iniciado sesión, el script continuará para agregarle los submenús a la nueva barra
+
+    //dependiendo si inicio sesion o no se mostrar el menu completo o no
     if (esPaginaPublica && !estaLogueado) {
         return; 
     }
     
-    // ... [El resto de tu código "const menuItems = ..." se queda exactamente igual] ...
     const menuItems = [
         {
             id: 'operaciones',
