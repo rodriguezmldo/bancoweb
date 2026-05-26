@@ -36,11 +36,11 @@
                 <span class="tipo_tarjeta">💳 Tarjeta Crédito</span>
                 <img id="visa_img" src="https://cdn-icons-png.flaticon.com/128/196/196578.png" alt="Visa" class="icono_tarjeta">
             </div>
-        
+
             <div class="tarjeta_titular">
                 <span>HECTOR HERNANDEZ PEREZ</span>
             </div>
-        
+
             <div class="tarjeta_numero">
                 <label>Número de tarjeta</label>
                 <div class="numero_unico">
@@ -50,7 +50,7 @@
                     <span>2311</span>
                 </div>
             </div>
-        
+
             <div class="tarjeta_datos">
                 <div class="tarjeta_fecha">
                     <label>Válida hasta</label>
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-    
+
         <!-- Detalles de la Tarjeta de Crédito -->
         <div class="datos_tarjeta">
             <!-- Número de tarjeta -->
@@ -79,7 +79,7 @@
                     </button>
                 </div>
             </div>
-        
+
             <!-- Límite de crédito (en lugar de saldo disponible) -->
             <div class="dato_tarjeta">
                 <label>Límite de crédito:</label>
@@ -90,7 +90,7 @@
                     </button>
                 </div>
             </div>
-        
+
             <!-- Saldo actual (lo que debe) -->
             <div class="dato_tarjeta">
                 <label>Saldo actual:</label>
@@ -98,7 +98,7 @@
                     <strong class="saldo_deuda">$12,450.00</strong>
                 </div>
             </div>
-        
+
             <!-- Saldo disponible (límite - saldo actual) -->
             <div class="dato_tarjeta">
                 <label>Saldo disponible:</label>
@@ -106,7 +106,7 @@
                     <strong class="saldo_disponible">$37,550.00</strong>
                 </div>
             </div>
-        
+
             <!-- Pago mínimo y pago total -->
             <div class="dato_tarjeta">
                 <label>Próximo pago:</label>
@@ -115,7 +115,7 @@
                     <span>Pago total: <strong>$12,450.00</strong></span>
                 </div>
             </div>
-        
+
             <!-- Fechas de corte y pago -->
             <div class="dato_tarjeta">
                 <label>Fechas importantes:</label>
@@ -124,7 +124,7 @@
                     <span>Fecha pago: <strong>05/01/2025</strong></span>
                 </div>
             </div>
-        
+
             <!-- Tasa de interés (CAT) -->
             <div class="dato_tarjeta">
                 <label>Tasa de interés (CAT):</label>
@@ -132,7 +132,7 @@
                     <strong>45%</strong> <span style="font-size: 11px; color: #888;">anual</span>
                 </div>
             </div>
-        
+
             <!-- Límites de la tarjeta de crédito -->
             <div class="dato_tarjeta">
                 <label>Límites:</label>
@@ -141,7 +141,7 @@
                     <span>Compras internacionales: <strong>$50,000</strong></span>
                 </div>
             </div>
-        
+
             <!-- Estado -->
             <div class="dato_tarjeta estado_tarjeta">
                 <label>Estado:</label>
@@ -151,14 +151,14 @@
                     <button class="btn_cambiar_estado" id="btnCambiarEstado">Apagar</button>
                 </div>
             </div>
-        
+
             <!-- Sección PIN (expandible) -->
             <div class="dato_tarjeta pin">
                 <label>PIN de la tarjeta:</label>
                 <div class="pin_contenido">
                     <button class="btn_consultar_pin" id="btnConsultarPin">Consultar PIN</button>
                     <button class="btn_gestionar_pin" id="btnGestionarPin">Gestionar PIN</button>
-                
+
                     <!-- Panel de PIN (oculto por defecto) -->
                     <div id="panelPin" class="panel_pin" style="display: none;">
                         <div class="pin_actual">
@@ -166,7 +166,7 @@
                             <span>****</span>
                             <button class="btn_ver_pin">👁️</button>
                         </div>
-                    
+
                         <div class="pin_cambio">
                             <label>Nuevo PIN:</label>
                             <input type="password" id="nuevoPin" maxlength="4" placeholder="****">
@@ -216,6 +216,7 @@
         </ul>
     </nav>
 
+    <script  src="../../js/barra_navegacion/nav_pages.js"></script>
 
 </body>
 </html>
