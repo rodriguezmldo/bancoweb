@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarjeta Virtual</title>
     <link rel="stylesheet" href="../../css/estilos_globales/nav_pages.css">
-    <link rel="stylesheet" href="../../css/estilos_globales/tarjeta.css">
     <link rel="stylesheet" href="../../css/estilos_globales/nav_options.css">
+    <link rel="stylesheet" href="../../css/tarjetas/tarjeta_completa.css">
+    <link rel="stylesheet" href="../../css/tarjetas/tarjetas_page.css">
 </head>
 <body>
     <nav class="nav_pages">
@@ -24,11 +25,154 @@
         </ul>
     </nav>
 
+
+    <div class="title"><h1>Tarjeta de Debito Virtual</h1></div>
+
+    <div class="contenedor_tarjeta">
+        <div class="tarjeta">
+            <div class="tarjeta_encabezado">
+                <span class="tipo_tarjeta">💳 Tarjeta Virtual</span>
+                <img id="visa_img" src="https://cdn-icons-png.flaticon.com/128/196/196578.png" alt="Visa" class="icono_tarjeta">
+            </div>
+
+            <div class="tarjeta_titular">
+                <span>HECTOR HERNANDEZ PEREZ</span>
+                
+            </div>
+
+            <div class="tarjeta_numero">
+                <label>Numero de tarjeta</label>
+                <div class="numero_unico">
+                    <span>9090</span>
+                    <span>9809</span>
+                    <span>8023</span>
+                    <span>2311</span>
+                </div>
+            </div>
+
+            <div class="tarjeta_datos">
+                <div class="tarjeta_fecha">
+                    <label>Válida hasta</label>
+                    <span>02/34</span>
+                </div>
+                <div class="tarjeta_cvv">
+                    <label>CVV</label>
+                    <span>***</span>
+                    <button class="btn_ver_cvv" type="button">
+                        <img id="eye_img" src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detalles de la tarjeta -->
+        <div class="datos_tarjeta">
+            <!-- Número de tarjeta -->
+            <div class="dato_tarjeta">
+                <label>Número de tarjeta:</label>
+                <div class="dato_valor">
+                    <span>9090 9809 8023 2311</span>
+                    <button class="btn_copy" data-copy="9090980980232311" onclick="copiarCLABE()">
+                        <img src="https://cdn-icons-png.flaticon.com/128/54/54702.png" alt="copy">
+                        <span>Copiar</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Saldo -->
+            <div class="dato_tarjeta">
+                <label>Saldo disponible:</label>
+                <div class="dato_valor saldo_valor">
+                    <strong>$15,230.50</strong>
+                    <button class="btn_ocultar_saldo" id="toggleSaldo">
+                        <img id="eye_img" src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt="">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Límites -->
+            <div class="dato_tarjeta">
+                <label>Límites diarios:</label>
+                <div class="limites_valores">
+                    <span>Retiro: <strong>$5,000</strong></span>
+                    <span>Compras: <strong>$10,000</strong></span>
+                </div>
+            </div>
+
+            <!-- Estado -->
+            <div class="dato_tarjeta estado_tarjeta">
+                <label>Estado:</label>
+                <div>
+                    <span class="estado activo">✅ Activa</span>
+                    <span style="display: none;" class="estado inactivo">❌ Desactivada</span>
+                    <button class="btn_cambiar_estado" id="btnCambiarEstado">Apagar</button>
+                </div>
+
+            </div>
+
+            <!-- Sección PIN (expandible) -->
+            <div class="dato_tarjeta pin">
+                <label>PIN de la tarjeta:</label>
+                <div class="pin_contenido">
+                    <button class="btn_consultar_pin" id="btnConsultarPin">Consultar PIN</button>
+                    <button class="btn_gestionar_pin" id="btnGestionarPin">Gestionar PIN</button>
+
+                    <!-- Panel de PIN (oculto por defecto) -->
+                    <div id="panelPin" class="panel_pin" style="display: none;">
+                        <div class="pin_actual">
+                            <label>PIN actual:</label>
+                            <span>****</span>
+                            <button class="btn_ver_pin">👁️</button>
+                        </div>
+
+                        <div class="pin_cambio">
+                            <label>Nuevo PIN:</label>
+                            <input type="password" id="nuevoPin" maxlength="4" placeholder="****">
+                            <button id="btnCambiarPin">Cambiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor_movimientos">
+    
+        <div class="movimientos_header">
+            <h2>Movimientos</h2>
+        </div>
+
+        <div id="listaMovimientos" class="lista_movimientos">
+
+            <!--
+            <div class="movimiento_item">
+                <div class="movimiento_icono">
+                    <img src="https://cdn-icons-png.flaticon.com/128/4139/4139987.png" alt="icono">
+                </div>
+                <div class="movimiento_info">
+                    <div class="movimiento_descripcion">
+                        <span class="movimiento_titulo">WL*SteamPurchase</span>
+                        <span class="movimiento_categoria">Compraste</span>
+                    </div>
+                    <div class="movimiento_fecha">17 ene. 7:21pm</div>
+                </div>
+                <div class="movimiento_monto negativo">-$105.45</div>
+            </div>
+            -->
+        </div>
+
+        <div class="movimientos_footer">
+            <button id="cargarMasMovimientos" class="btn_cargar_mas">Cargar más movimientos ↓</button>
+        </div>
+    </div>
+
+
+
     <nav class="nav_options">
         <ul>
-            <li><a href="depositar.html">Tarjeta de Debito</a></li>
-            <li><a href="transferir.html">Tarjeta Virtual Debito</a></li>
-            <li><a href="retirar.html">Tarjeta de Credito</a></li>
+            <li><a href="tarjeta_debito.html">Tarjeta de Debito</a></li>
+            <li><a href="tarjeta_virtual.html">Tarjeta Virtual Debito</a></li>
+            <li><a href="tarjeta_credito.html">Tarjeta de Credito</a></li>
         </ul>
     </nav>
 

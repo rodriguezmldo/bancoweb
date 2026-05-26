@@ -1,3 +1,13 @@
+.contenedor_principal{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 .contenedor_mas_info {
     display: flex;
     flex-direction: column;
@@ -10,7 +20,6 @@
     width: 55%;
 }
 
-/* Cada bloque de información */
 .info_bloque {
     border-bottom: 1px solid #f0f0f0;
     padding-bottom: 20px;
@@ -74,7 +83,7 @@
     margin: 0;
 }
 
-/* Botón copiar */
+
 .btn_copy {
     display: flex;
     align-items: center;
@@ -105,7 +114,7 @@
     color: #333;
 }
 
-/* Links de Google Maps */
+
 .maps_link {
     display: inline-flex;
     align-items: center;
@@ -128,7 +137,6 @@
     transform: translateX(2px);
 }
 
-/* Botón de solicitar código (retiro sin tarjeta) */
 .btn_solicitar {
     background-color: #2b2b2b;
     color: white;
@@ -147,7 +155,6 @@
     transform: scale(0.98);
 }
 
-/* Tarjeta de código generado */
 .codigo_card {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 16px;
