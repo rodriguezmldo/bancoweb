@@ -29,7 +29,7 @@
 
         <div class="contenedor_formularios">
             
-            <div class="pedir_correo">
+            <div class="pedir_correo" id="contenedorCorreo">
                 <form id="formSolicitarCorreo" action="#" method="POST">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
@@ -40,8 +40,7 @@
                 </form>
             </div>
 
-            
-            <div class="pedir_nueva_contraseña">
+            <div class="pedir_nueva_contraseña oculto" id="contenedorPassword">
                 <form id="formNuevaPassword" action="#" method="POST">
                     <label for="nuevaPassword">Nueva Contraseña</label>
                     <input type="password" id="nuevaPassword" name="nuevaPassword" placeholder="*******" required>
@@ -53,5 +52,7 @@
             </div>
         </div>
     </div>
+
+    <script src="../../js/login/login_restablecer.js"></script>
 </body>
 </html>

@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/17077/17077521.png">
     <link rel="stylesheet" href="../../css/login/login.css">
 </head>
 <body>
 
     <div class="login">
         <div class="icon-container">
-        <img src="https://cdn-icons-png.flaticon.com/128/3758/3758099.png" alt="Icono candado" width="40" height="40">
-        
+            <img src="https://cdn-icons-png.flaticon.com/128/3758/3758099.png" alt="Icono candado" width="40" height="40">
         </div>
 
         <h1>Iniciar Sesión</h1>
 
-        <form action="">
+        <form id="loginForm" action="">
             <div class="inputData">
-                <label for="email">Email o tel&eacute;fono:</label>
-                <input type="text" id="email"  placeholder="example@gmail.com">
+                <label for="email">Email o teléfono:</label>
+                <input type="text" id="email" placeholder="example@gmail.com">
             </div>
 
             <div class="inputData">
@@ -32,8 +32,9 @@
             <button type="submit" class="login-btn">Iniciar Sesión</button>
         </form>
 
-        <a href="" class="passwordGood">Olvidate tu contraseña?</a>
+        <a href="../login/login_restablecer.html" class="passwordGood">Olvidate tu contraseña?</a>
     </div>
 
+    <script src="../../js/login/login.js"></script>
 </body>
 </html>

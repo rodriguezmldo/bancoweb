@@ -5,6 +5,10 @@
     font-family: sans-serif;
 }
 
+.oculto {
+    display: none !important;
+}
+
 body {
     background-color: #fafafa;
     padding: 20px;
@@ -97,8 +101,21 @@ input {
     margin-top: 10px;
 }
 
-.bottoms button{
-    padding: 0.5em;
-    border: #ccc;
-    border-radius: 3px;
+/* Mejora visual de los botones */
+.bottoms button {
+    padding: 0.5em 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1; /* Para que midan lo mismo */
+    transition: background-color 0.2s;
+}
+
+.bottoms button[type="submit"] {
+    background-color: #2b2b2b;
+    color: white;
+}
+
+.bottoms button[type="submit"]:hover {
+    background-color: #000;
 }
