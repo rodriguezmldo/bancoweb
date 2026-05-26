@@ -30,12 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para obtener el saldo según el tipo de tarjeta
     function obtenerSaldo(tarjeta, tipo) {
         if (tipo === 'credito') {
-            // Para crédito, mostramos el saldo disponible (limiteCredito - saldoActual)
             const limite = tarjeta.limiteCredito || 0;
             const saldoActual = tarjeta.saldoActual || 0;
             return limite - saldoActual;
         } else {
-            // Para débito y virtual
             return tarjeta.saldo || 0;
         }
     }
@@ -49,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Función para formatear número de tarjeta (mostrar últimos 4 dígitos)
+    // Función para formatear número de tarjeta
     function formatearNumeroTarjeta(numero) {
         if (!numero) return "**** ****";
         const limpio = numero.replace(/\s/g, '');
@@ -57,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return `**** ${ultimos4}`;
     }
     
-    // Función para obtener solo los últimos 4 dígitos sin formato
+    // Función para obtener últimos 4 dígitos
     function obtenerUltimos4Digitos(numero) {
         if (!numero) return "****";
         const limpio = numero.replace(/\s/g, '');
@@ -83,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
         
-        // Buscar todas las tarjetas mini en la página
         const tarjetasMini = document.querySelectorAll('.tarjeta');
         
         if (tarjetasMini.length === 0) {
@@ -94,15 +91,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const saldoMostrar = obtenerSaldo(tarjeta, tipo);
         const textoMoneda = obtenerTextoMoneda(tipo);
         
-        // Actualizar cada tarjeta mini encontrada
         tarjetasMini.forEach((tarjetaElement) => {
-            // Actualizar el número de tarjeta
             const numeroParrafo = tarjetaElement.querySelector('div:first-child p');
             if (numeroParrafo) {
                 numeroParrafo.textContent = formatearNumeroTarjeta(tarjeta.numero);
             }
             
-            // Actualizar el saldo
             const saldoParrafo = tarjetaElement.querySelector('div:last-child p');
             if (saldoParrafo) {
                 const saldoFormateado = formatearSaldo(saldoMostrar);
@@ -115,11 +109,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
             
-            // Actualizar clase de la tarjeta para estilos
             tarjetaElement.classList.remove('debito', 'credito', 'virtual');
             tarjetaElement.classList.add(tipo);
             
-            // Actualizar atributos del ojo
             const eyeImg = tarjetaElement.querySelector('#eye_img');
             if (eyeImg) {
                 eyeImg.setAttribute('data-saldo', saldoMostrar);
@@ -131,21 +123,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
         
-        // Actualizar elementos específicos según la página
         actualizarCLABE(tarjeta);
         actualizarSelectoresCuenta(tarjeta, tipo);
         actualizarFondosDisponibles(tarjeta, tipo);
         
-        console.log(`✅ Tarjeta ${tipo} actualizada - Saldo a mostrar: ${formatearSaldo(saldoMostrar)}`);
+        console.log(`✅ Tarjeta ${tipo} actualizada - Saldo: ${formatearSaldo(saldoMostrar)}`);
     }
     
-    // Función para actualizar CLABE en páginas de depósito
+    // Función para actualizar CLABE
     function actualizarCLABE(tarjeta) {
         const clabeElement = document.querySelector('.clabe_numero');
         if (clabeElement && tarjeta.clabe) {
             clabeElement.textContent = tarjeta.clabe;
-            
-            // Actualizar botón de copiar
             const btnCopy = document.querySelector('.btn_copy');
             if (btnCopy) {
                 const clabeLimpia = tarjeta.clabe.replace(/\s/g, '');
@@ -154,23 +143,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Función para actualizar selectores de cuentas en formularios
+    // Función para actualizar selectores
     function actualizarSelectoresCuenta(tarjetaActual, tipoActual) {
         const selectCuenta = document.getElementById('cuentaOrigen');
         if (!selectCuenta) return;
         
         const todas = obtenerTodasTarjetas();
         
-        // Limpiar opciones existentes excepto la primera
         while (selectCuenta.options.length > 1) {
             selectCuenta.remove(1);
         }
         
-        // Agregar opciones de todas las tarjetas disponibles
         if (todas.debito) {
             const option = document.createElement('option');
             option.value = 'debito';
-            const saldoDebito = formatearSaldo(todas.debito.saldo || 0);
             option.textContent = `Débito **** ${obtenerUltimos4Digitos(todas.debito.numero)}`;
             if (tipoActual === 'debito') option.selected = true;
             selectCuenta.appendChild(option);
@@ -179,8 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (todas.credito) {
             const option = document.createElement('option');
             option.value = 'credito';
-            const saldoDisponible = (todas.credito.limiteCredito || 0) - (todas.credito.saldoActual || 0);
-            const saldoCredito = formatearSaldo(saldoDisponible);
             option.textContent = `Crédito **** ${obtenerUltimos4Digitos(todas.credito.numero)}`;
             if (tipoActual === 'credito') option.selected = true;
             selectCuenta.appendChild(option);
@@ -189,14 +173,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (todas.virtual) {
             const option = document.createElement('option');
             option.value = 'virtual';
-            const saldoVirtual = formatearSaldo(todas.virtual.saldo || 0);
             option.textContent = `Virtual **** ${obtenerUltimos4Digitos(todas.virtual.numero)}`;
             if (tipoActual === 'virtual') option.selected = true;
             selectCuenta.appendChild(option);
         }
     }
     
-    // Función para actualizar fondos disponibles (para pago de servicios)
+    // Función para fondos disponibles
     function actualizarFondosDisponibles(tarjeta, tipo) {
         let fondosContainer = document.querySelector('.fondos-disponibles');
         const campoMonto = document.querySelector('.campo:has(input[type="text"]), .campo:has(input[type="number"])');
@@ -207,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 fondosContainer.className = 'campo fondos-disponibles';
                 fondosContainer.style.cssText = 'margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 8px;';
                 const label = document.createElement('label');
-                label.textContent = ' Fondos disponibles:';
+                label.textContent = '💰 Fondos disponibles:';
                 label.style.fontWeight = 'bold';
                 const valorSpan = document.createElement('span');
                 valorSpan.className = 'fondos-valor';
@@ -225,60 +208,101 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Función para crear selector de tarjeta en página de retiro
+    // Función para crear selector de tarjeta en página de retiro (VERSIÓN SIMPLIFICADA)
     function crearSelectorTarjetaRetiro() {
-        const contenedorPrincipal = document.querySelector('.contenedor_principal');
-        const tarjetaElement = document.querySelector('.tarjeta');
+        // Solo ejecutar en la página de retiro
+        if (!window.location.href.includes('retirar.html')) return;
         
-        if (contenedorPrincipal && tarjetaElement && window.location.href.includes('retirar.html')) {
-            if (document.querySelector('.selector-tarjeta-retiro')) return;
-            
-            const selectorContainer = document.createElement('div');
-            selectorContainer.className = 'selector-tarjeta-retiro';
-            selectorContainer.style.cssText = `
-                margin: 20px 0;
-                padding: 15px;
-                background: #f5f5f5;
-                border-radius: 12px;
-                text-align: center;
-            `;
-            
-            // Obtener saldos para mostrar
-            const todas = obtenerTodasTarjetas();
-            const saldoDebito = todas.debito ? formatearSaldo(todas.debito.saldo || 0) : '$0';
-            const saldoCredito = todas.credito ? formatearSaldo((todas.credito.limiteCredito || 0) - (todas.credito.saldoActual || 0)) : '$0';
-            const saldoVirtual = todas.virtual ? formatearSaldo(todas.virtual.saldo || 0) : '$0';
-            
-            selectorContainer.innerHTML = `
-                <label style="display: block; margin-bottom: 10px; font-weight: bold;">Seleccionar tarjeta para retiro:</label>
-                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                    <button type="button" class="btn-selector-tarjeta" data-tipo="debito" style="padding: 8px 16px; border: none; border-radius: 8px; cursor: pointer; background: #0a192f; color: white;">
-                        💳 Débito 
-                    </button>
-                    <button type="button" class="btn-selector-tarjeta" data-tipo="credito" style="padding: 8px 16px; border: none; border-radius: 8px; cursor: pointer; background: #1a472a; color: white;">
-                        💳 Crédito
-                    </button>
-                    <button type="button" class="btn-selector-tarjeta" data-tipo="virtual" style="padding: 8px 16px; border: none; border-radius: 8px; cursor: pointer; background: #2d1b4e; color: white;">
-                        💳 Virtual
-                    </button>
-                </div>
-            `;
-            
-            contenedorPrincipal.insertBefore(selectorContainer, tarjetaElement);
-            
-            const botones = selectorContainer.querySelectorAll('.btn-selector-tarjeta');
-            botones.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const tipo = btn.getAttribute('data-tipo');
-                    tarjetaSeleccionada = tipo;
-                    actualizarTarjetaMini(tipo);
-                    actualizarSelectoresCuenta(obtenerTarjetaActiva(tipo), tipo);
+        // Verificar si ya existe el selector
+        if (document.querySelector('.selector-tarjeta-retiro')) return;
+        
+        // Buscar el contenedor donde está la tarjeta
+        const contenedorPrincipal = document.querySelector('.contenedor_principal');
+        const tarjetaElement = document.querySelector('.contenedor_principal .tarjeta');
+        
+        if (!contenedorPrincipal || !tarjetaElement) return;
+        
+        // Crear el selector
+        const selectorContainer = document.createElement('div');
+        selectorContainer.className = 'selector-tarjeta-retiro';
+        selectorContainer.style.cssText = `
+            margin-top: 20px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        `;
+        
+        selectorContainer.innerHTML = `
+            <label style="display: block; margin-bottom: 10px; font-weight: bold; color: #333;">
+                💳 Seleccionar tarjeta:
+            </label>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button type="button" class="btn-selector-tarjeta" data-tipo="debito" 
+                    style="padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; 
+                           background: #0a192f; color: white; font-weight: bold; transition: all 0.3s;">
+                    💳 Débito
+                </button>
+                <button type="button" class="btn-selector-tarjeta" data-tipo="credito" 
+                    style="padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; 
+                           background: #1a472a; color: white; font-weight: bold; transition: all 0.3s;">
+                    💳 Crédito
+                </button>
+                <button type="button" class="btn-selector-tarjeta" data-tipo="virtual" 
+                    style="padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; 
+                           background: #2d1b4e; color: white; font-weight: bold; transition: all 0.3s;">
+                    💳 Virtual
+                </button>
+            </div>
+        `;
+        
+        // Insertar el selector DESPUÉS de la tarjeta (no mover la tarjeta)
+        tarjetaElement.insertAdjacentElement('afterend', selectorContainer);
+        
+        // Asegurar que el contenedor principal tenga flex para mantener layout
+        contenedorPrincipal.style.display = 'flex';
+        contenedorPrincipal.style.gap = '30px';
+        contenedorPrincipal.style.alignItems = 'flex-start';
+        contenedorPrincipal.style.flexWrap = 'wrap';
+        
+        // Event listeners para los botones
+        const botones = selectorContainer.querySelectorAll('.btn-selector-tarjeta');
+        botones.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tipo = btn.getAttribute('data-tipo');
+                tarjetaSeleccionada = tipo;
+                actualizarTarjetaMini(tipo);
+                actualizarSelectoresCuenta(obtenerTarjetaActiva(tipo), tipo);
+                
+                // Efecto visual
+                botones.forEach(b => {
+                    b.style.opacity = '0.7';
+                    b.style.transform = 'scale(0.95)';
                 });
+                btn.style.opacity = '1';
+                btn.style.transform = 'scale(1)';
             });
+            
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transform = 'translateY(-2px)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                if (!btn.style.opacity || btn.style.opacity === '1') {
+                    btn.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Seleccionar débito por defecto
+        const btnDebito = selectorContainer.querySelector('.btn-selector-tarjeta[data-tipo="debito"]');
+        if (btnDebito) {
+            btnDebito.style.opacity = '1';
+            btnDebito.style.transform = 'scale(1)';
         }
     }
     
-    // Función para manejar el mostrar/ocultar saldo
+    // Función para manejar mostrar/ocultar saldo
     function initToggleSaldo() {
         const ojos = document.querySelectorAll('#eye_img');
         ojos.forEach(ojo => {
@@ -287,7 +311,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     
-    // Manejador del click en el ojo
     function manejarClickOjo(event) {
         const ojo = event.currentTarget;
         const tarjetaElement = ojo.closest('.tarjeta');
@@ -299,11 +322,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const tipo = ojo.getAttribute('data-tipo') || tarjetaSeleccionada;
         const tarjeta = obtenerTarjetaActiva(tipo);
         
-        // Verificar estado actual
         const estaOculto = saldoParrafo.textContent.includes('*******');
         
         if (estaOculto) {
-            // Mostrar saldo
             const saldoMostrar = obtenerSaldo(tarjeta, tipo);
             const textoMoneda = obtenerTextoMoneda(tipo);
             const saldoFormateado = formatearSaldo(saldoMostrar);
@@ -314,7 +335,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             ojo.style.opacity = '1';
         } else {
-            // Ocultar saldo
             const monedaSpan = saldoParrafo.querySelector('.moneda');
             const textoMoneda = monedaSpan ? monedaSpan.textContent : '/mes';
             saldoParrafo.innerHTML = `******* <span class="moneda">${textoMoneda}</span>`;
@@ -341,7 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
     
-    // Función para inicializar el selector de cuenta
+    // Función para selector de cuenta
     function initSelectorCuenta() {
         const selectCuenta = document.getElementById('cuentaOrigen');
         if (selectCuenta) {
@@ -376,12 +396,19 @@ document.addEventListener("DOMContentLoaded", () => {
                             alert('Código copiado');
                         };
                     }
+                    
+                    const btnDescargarPDF = document.getElementById('btnDescargarPDF');
+                    if (btnDescargarPDF) {
+                        btnDescargarPDF.onclick = () => {
+                            alert('Función de descarga PDF en desarrollo');
+                        };
+                    }
                 }
             });
         }
     }
     
-    // Inicializar según la página actual
+    // Inicializar según la página
     function init() {
         const url = window.location.href;
         
@@ -394,8 +421,9 @@ document.addEventListener("DOMContentLoaded", () => {
             initSelectorCuenta();
         }
         else if (url.includes('retirar.html')) {
-            crearSelectorTarjetaRetiro();
+            // Primero actualizar la tarjeta, luego crear el selector
             actualizarTarjetaMini('debito');
+            crearSelectorTarjetaRetiro();
             initCodigoRetiro();
         }
         else if (url.includes('pago_servicios.html')) {
