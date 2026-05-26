@@ -6,7 +6,7 @@
     <title>Quiénes somos</title>
     <link rel="stylesheet" href="../../../css/estilos_globales/nav_pages.css">
     <link rel="stylesheet" href="../../../css/estilos_globales/nav_options.css">
-    <link rel="stylesheet" href="../../../css/otros/quienes_somos/quienes_somos.css">
+    <link rel="stylesheet" href="../../../css/otros/soporte/soporte.css">
 </head>
 <body>
     <nav class="nav_pages">
@@ -16,11 +16,10 @@
         </div>
     
         <ul>
-            <li><a href="../../../index.html" class="active"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
-            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
+            <li><a href="../../login/login.html"><img src="https://cdn-icons-png.flaticon.com/128/3596/3596092.png" alt="principal"><span>Inicio de sesión</span></a></li>
+            <li><a href="../quienes_somos/quienes_somos.html"><img src="https://cdn-icons-png.flaticon.com/128/681/681494.png" alt="info"><span>Quiénes somos</span></a></li>
+            <li><a href="../terminos_condiciones/terminos_condiciones.html"><img src="https://cdn-icons-png.flaticon.com/128/3822/3822911.png" alt="terminos"><span>Términos y condiciones</span></a></li>
+            <li><a href="../soporte/soporte.html" class="active"><img src="https://cdn-icons-png.flaticon.com/128/1/1176.png" alt="soporte"><span>Soporte</span></a></li>
         </ul>
     </nav>
 
@@ -31,7 +30,7 @@
             
             <div class="support-card card-half">
                 <div class="card-header">
-                    <img src="" alt="Info Icon">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1/1176.png" alt="Info Icon">
                     <h2>Acciones rápidas</h2>
                 </div>
                 <div class="card-content">
@@ -42,7 +41,7 @@
 
             <div class="support-card card-half">
                 <div class="card-header">
-                    <img src="" alt="Info Icon">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1660/1660165.png" alt="Info Icon">
                     <h2>Ayuda frecuente</h2>
                 </div>
                 <div class="card-content">
@@ -53,7 +52,7 @@
 
             <div class="support-card card-wide">
                 <div class="card-header">
-                    <img src="" alt="Info Icon">
+                    <img src="https://cdn-icons-png.flaticon.com/128/4776/4776726.png" alt="Info Icon">
                     <h2>Centro de ayuda</h2>
                 </div>
                 <div class="card-content">
@@ -64,7 +63,7 @@
 
             <div class="support-card card-narrow">
                 <div class="card-header">
-                    <img src="" alt="Info Icon">
+                    <img src="https://cdn-icons-png.flaticon.com/128/5905/5905391.png" alt="Info Icon">
                     <h2>Contacto</h2>
                 </div>
                 <div class="card-content">
@@ -78,12 +77,26 @@
 
     <nav class="nav_options">
         <ul>
-            <li><a href="quienes_somos.html">Quiénes somos</a></li>
-            <li><a href="">Soporte</a></li>
-            <li><a href="">Terminos y condiciones</a></li>
+            <li><a href="../quienes_somos/quienes_somos.html">Quiénes somos</a></li>
+            <li><a href="#">Soporte</a></li>
+            <li><a href="../terminos_condiciones/terminos_condiciones.html">Términos y condiciones</a></li>
         </ul>
     </nav>
 
-    <script  src="../../../js/barra_navegacion/nav_pages.js"></script>
+    <script>
+        if (localStorage.getItem("idUsuarioActivo")) {
+            const navUl = document.querySelector(".nav_pages ul");
+            
+            navUl.innerHTML = `
+                <li><a href="../../../index.html"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
+                <li><a href="../../cuenta/cuenta.html"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
+                <li><a href="#" class="active"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
+            `;
+        }
+    </script>
+
+    <script src="../../../js/barra_navegacion/nav_pages.js"></script>
 </body>
-</html> 
+</html>

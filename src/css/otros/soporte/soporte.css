@@ -1,0 +1,75 @@
+.support-container {
+    max-width: 1200px;
+    margin: 60px auto; 
+    padding: 0 30px;
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #111;
+}
+
+.title-principal {
+    font-size: clamp(32px, 5vw, 42px);
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px; 
+}
+
+.support-card {
+    border: 1px solid #7a7a7a; 
+    border-radius: 8px;
+    padding: 35px 30px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-half {
+    grid-column: span 6;
+}
+
+.card-wide {
+    grid-column: span 8; 
+}
+
+.card-narrow {
+    grid-column: span 4;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.card-header img {
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+}
+
+.card-header h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #2b2b2b;
+}
+
+.card-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+    text-align: justify;
+}

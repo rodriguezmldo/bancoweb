@@ -3,8 +3,25 @@
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = window.location.pathname.toLowerCase();
+    const paginasPublicas = [
+        'login.html',
+        'login_restablecer.html',
+        'quienes_somos.html',
+        'terminos_condiciones.html',
+        'soporte.html'
+    ];
     
-    // Crear estructura para submenús
+    const esPaginaPublica = paginasPublicas.some(pagina => currentPage.includes(pagina));
+    
+    // login usuario
+    const estaLogueado = localStorage.getItem("idUsuarioActivo") !== null;
+
+    //dependiendo si inicio sesion o no se mostrar el menu completo o no
+    if (esPaginaPublica && !estaLogueado) {
+        return; 
+    }
+    
     const menuItems = [
         {
             id: 'operaciones',
@@ -41,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
             texto: 'Más',
             submenu: [
                 { nombre: 'Quiénes somos', url: '/src/pages/otros/quienes_somos/quienes_somos.html' },
-                { nombre: 'Soporte', url: 'info/soporte.html' },
-                { nombre: 'Términos y condiciones', url: 'info/terminos.html' }
+                { nombre: 'Soporte', url: '/src/pages/otros/soporte/soporte.html' },
+                { nombre: 'Términos y condiciones', url: '/src/pages/otros/terminos_condiciones/terminos_condiciones.html' }
             ]
         }
 

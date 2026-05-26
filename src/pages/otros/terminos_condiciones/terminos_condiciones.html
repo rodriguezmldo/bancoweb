@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes somos</title>
+    <link rel="stylesheet" href="../../../css/estilos_globales/nav_pages.css">
+    <link rel="stylesheet" href="../../../css/estilos_globales/nav_options.css">
+    <link rel="stylesheet" href="../../../css/otros/terminos_condiciones/terminos_condiciones.css">
+</head>
+<body>
+
+
+    <nav class="nav_pages">
+        <div class="logo_banco">
+            <img src="https://cdn-icons-png.flaticon.com/128/1018/1018197.png" alt="bank">
+            <span>BBMN</span>
+        </div>
+    
+        <ul>
+            <li><a href="../../login/login.html"><img src="https://cdn-icons-png.flaticon.com/128/3596/3596092.png" alt="principal"><span>Inicio de sesión</span></a></li>
+            <li><a href="../quienes_somos/quienes_somos.html"><img src="https://cdn-icons-png.flaticon.com/128/681/681494.png" alt="info"><span>Quiénes somos</span></a></li>
+            <li><a href="../terminos_condiciones/terminos_condiciones.html"><img src="https://cdn-icons-png.flaticon.com/128/3822/3822911.png" alt="terminos"><span>Términos y condiciones</span></a></li>
+            <li><a href="../soporte/soporte.html" class="active"><img src="https://cdn-icons-png.flaticon.com/128/1/1176.png" alt="soporte"><span>Soporte</span></a></li>
+        </ul>
+    </nav>
+
+
+    <main class="terms-container">
+        <h1 class="title-principal">Términos y condiciones</h1>
+
+        <div class="terms-card">
+            
+            <div class="terms-section">
+                <div class="section-label">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3822/3822911.png" alt="Info Icon" width="40" height="40">
+                    <span>Introducción</span>
+                </div>
+                <h3>Aceptación del contrato de banca electrónica</h3>
+                <p>Al acceder, navegar y utilizar la plataforma de servicios financieros de BBMN, usted reconoce haber leído, entendido y aceptado en su totalidad estar sujeto a los presentes términos. Le recomendamos revisar cuidadosamente este documento antes de realizar cualquier operación, depósito o transferencia en nuestro sistema.</p>
+            </div>
+
+            <div class="terms-section">
+                <div class="section-label">
+                    <span>Uso del servicio</span>
+                </div>
+                <h3>Lineamientos para operaciones bancarias</h3>
+                <p>El acceso a su cuenta es estrictamente personal e intransferible. El usuario se compromete a utilizar la plataforma web y los servicios móviles de BBMN únicamente para fines lícitos. Queda estrictamente prohibido el uso de nuestros sistemas para actividades de lavado de dinero, fraudes o cualquier operación que vulnere las leyes vigentes.</p>
+            </div>
+
+            <div class="terms-section">
+                <div class="section-label">
+                    <span>Responsabilidades</span>
+                </div>
+                <h3>Obligaciones del usuario y la institución</h3>
+                <p>BBMN garantiza la disponibilidad de sus fondos y la seguridad de sus transacciones. Sin embargo, el usuario es el único responsable de mantener en secreto sus contraseñas y de verificar meticulosamente los números de cuenta, CLABE o referencias antes de confirmar cualquier transferencia SPEI o pago de servicios.</p>
+            </div>
+
+            <div class="terms-section">
+                <div class="section-label">
+                    <span>Privacidad y datos</span>
+                </div>
+                <h3>Tratamiento y protección de su información</h3>
+                <p>Toda la información personal, biométrica y financiera recopilada por BBMN está encriptada de extremo a extremo y respaldada bajo la Ley Federal de Protección de Datos Personales en Posesión de los Particulares. Nunca comercializaremos su información con terceros bajo ninguna circunstancia.</p>
+            </div>
+
+        </div>
+    </main>
+
+
+    <nav class="nav_options">
+        <ul>
+            <li><a href="../quienes_somos/quienes_somos.html">Quiénes somos</a></li>
+            <li><a href="../soporte/soporte.html">Soporte</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+    </nav>
+
+    
+
+    <script>
+        if (localStorage.getItem("idUsuarioActivo")) {
+            const navUl = document.querySelector(".nav_pages ul");
+            
+            navUl.innerHTML = `
+                <li><a href="../../../index.html"><img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="principal"><span>Inicio</span></a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/10074/10074820.png" alt="operaciones"><span>Operaciones</span></a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4021/4021708.png" alt="tarjeta"><span>Tarjetas</span></a></li>
+                <li><a href="../../cuenta/cuenta.html"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="cuenta"><span>Cuenta</span></a></li>
+                <li><a href="#" class="active"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
+            `;
+        }
+    </script>
+
+    <script src="../../../js/barra_navegacion/nav_pages.js"></script>
+</body>
+</html>
