@@ -13,7 +13,6 @@
 </head>
 <body>
 
-
     <nav class="nav_pages">
         <div class="logo_banco">
             <img src="https://cdn-icons-png.flaticon.com/128/1018/1018197.png" alt="bank">
@@ -28,7 +27,6 @@
             <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/14120/14120322.png" alt="otros"><span>Más</span></a></li>
         </ul>
     </nav>
-
 
     <main class="dashboard">
         <header class="header-section">
@@ -83,6 +81,45 @@
         <section class="cards-section">
             <h2>Control de Tarjetas</h2>
             <p class="subtitle text-center">Para ver más información sobre las tarjetas presione en "Ver más detalles".</p>
+
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+                    
+                    <div class="credit-card">
+                        <div class="card-header">
+                            <span>Tarjeta de Crédito</span>
+                            <span class="card-number">*** 2311</span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn-details">Más Detalles</button>
+                            <span class="card-brand">VISA</span>
+                        </div>
+                    </div>
+
+                    <div class="credit-card active">
+                        <div class="card-header">
+                            <span>Tarjeta de Débito</span>
+                            <span class="card-number">*** 5432</span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn-details">Más Detalles</button>
+                            <span class="card-brand">MASTERCARD</span>
+                        </div>
+                    </div>
+
+                    <div class="credit-card">
+                        <div class="card-header">
+                            <span>Tarjeta Virtual</span>
+                            <span class="card-number">*** 9876</span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn-details">Más Detalles</button>
+                            <span class="card-brand">VISA</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <div class="btn-container">
@@ -90,6 +127,7 @@
         </div>
     </main>
 
-    <script  src="js/barra_navegacion/nav_pages.js"></script>
+    <script src="./js/indexHome.js"></script>
+    <script src="js/barra_navegacion/nav_pages.js"></script>
 </body>
 </html>

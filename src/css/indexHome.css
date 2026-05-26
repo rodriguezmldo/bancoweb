@@ -41,7 +41,6 @@ h2 {
     margin: 0 auto; 
 }
 
-
 .btn-container { 
     margin-top: 20px; 
     text-align: center;
@@ -58,5 +57,84 @@ h2 {
     cursor: pointer;
     width: auto;
     max-width: 90%;
+    margin-bottom: 30px;    
 }
 
+.carousel-wrapper {
+    width: 100%;
+    height: 300px; 
+    overflow: hidden; 
+    position: relative;
+    max-width: 100vw;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none; 
+    padding: 0 calc(50% - 200px);
+    cursor: grab;
+    height: 100%; 
+}
+
+.carousel-track::-webkit-scrollbar,
+.carousel-wrapper::-webkit-scrollbar {
+    display: none; 
+    width: 0;
+    height: 0;
+}
+
+.carousel-track:active {
+    cursor: grabbing;
+}
+
+.credit-card {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 400px; 
+    height: 200px;
+    background-color: #0a192f;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    scroll-snap-align: center; 
+    transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0.5; 
+    user-select: none; 
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    
+}
+
+.credit-card.active {
+    transform: scale(1.25); 
+    opacity: 1;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.card-header, .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.btn-details {
+    padding: 8px 16px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #111;
+}
