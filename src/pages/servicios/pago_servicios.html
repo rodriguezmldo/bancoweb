@@ -50,13 +50,15 @@
             </div>
             
             <div class="campo">
-                <label for="">Servicio</label>
-                <select id="cuentaOrigen" name="cuentaOrigen" required>
+                <label for="tipoServicio">Servicio</label>
+                <select id="tipoServicio" name="tipoServicio" required>
                     <option value="">Seleccione un servicio</option>
-                    <option value="luz">Luz</option>
-                    <option value="agua">Agua</option>
-                    <option value="gas">Gas</option>
-                    <option value="recarga">Recarga Tiempo Aire</option>
+                    <option value="Luz">Luz</option>
+                    <option value="Agua">Agua</option>
+                    <option value="Gas">Gas</option>
+                    <option value="Recarga">Recarga Tiempo Aire</option>
+                    <option value="Internet">Internet</option>
+                    <option value="TV">TV Paga</option>
                 </select>
             </div>
             
@@ -117,6 +119,19 @@
         </ul>
     </nav>
 
-    <script  src="../../js/barra_navegacion/nav_pages.js"></script>
+    <script src="../../js/barra_navegacion/nav_pages.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const parametrosUrl = new URLSearchParams(window.location.search);
+            const servicioSeleccionado = parametrosUrl.get("Servicio");
+            if (servicioSeleccionado) {
+                const selectServicio = document.getElementById("tipoServicio");
+                if (selectServicio) {
+                    selectServicio.value = servicioSeleccionado;
+                }
+            }
+        });
+    </script>
 </body>
 </html>

@@ -30,9 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
             texto: 'Cuenta',
             submenu: [
                 { nombre: 'Más detalles', url: '/src/pages/cuenta/cuenta.html' },
-                { 
-                    nombre: 'Cerrar sesión', 
-                    url: '/src/pages/login/login.html',
+                { nombre: 'Estado de Cuenta', url: '/src/pages/estado_cuenta/estado_cuenta.html' },
+                { nombre: 'Cerrar sesión', url: '/src/pages/login/login.html',
                     esCerrarSesion: true  
                 }
             ]
