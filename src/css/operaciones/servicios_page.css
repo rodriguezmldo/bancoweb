@@ -1,7 +1,73 @@
+.contenedor_principal{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    align-items: center;
+    padding: 1% 5%;
+    gap: 3em;
+}
+
 
 .contenedor_form{
-    border: solid 2px #ccc;
-    max-width: 20%;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px #CCC;
     padding: 1.5em;
-
+    border-radius: 16px;
+    width: 50%;
+    background: white;
+    gap: 1.5em;
 }
+
+.campo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    margin: 0;
+}
+
+.campo label {
+    width: 40%;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.campo select,
+.campo input {
+    width: 55%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.botones_form {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.botones_form button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn_guardar {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.btn_enviar {
+    background-color: #2b2b2b;
+    color: white;
+}
+
+
+
+

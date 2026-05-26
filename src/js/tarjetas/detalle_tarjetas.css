@@ -1,0 +1,113 @@
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 35%;
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 220px;
+
+    background: linear-gradient(135deg, #0a192f, #112240);
+    border-radius: 18px;
+    padding: 1.5em;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    gap: 1.5em;
+}
+
+/* ENCABEZADO */
+.tarjeta_encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tipo_tarjeta {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    font-weight: 500;
+}
+
+.tarjeta #visa_img {
+    width: 50px;
+    height: 50px;
+    filter: brightness(0) invert(1);
+}
+
+/* TITULAR */
+.tarjeta_titular {
+    margin-top: auto;
+}
+
+.tarjeta_titular span {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* NUMERO */
+.tarjeta_numero {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8em;
+
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+/* DATOS */
+.tarjeta_datos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.tarjeta_fecha,
+.tarjeta_cvv {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.tarjeta_fecha label,
+.tarjeta_cvv label {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tarjeta_fecha span,
+.tarjeta_cvv span {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* CVV */
+.tarjeta_cvv {
+    align-items: flex-end;
+}
+
+.btn_ver_cvv {
+    margin-top: 0.3em;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 8px;
+
+    color: white;
+    padding: 0.4em 0.6em;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn_ver_cvv:hover {
+    background: rgba(255, 255, 255, 0.2);
+}

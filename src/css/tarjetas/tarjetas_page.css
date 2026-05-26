@@ -1,0 +1,276 @@
+
+.title{
+    display: flex;
+    color:#4f5052;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.contenedor_tarjeta{
+    display: flex;
+    padding: 1em;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.datos_tarjeta {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    padding: 1.8em;
+    border-radius: 20px;
+    min-width: 280px;
+    max-width: 450px;
+    width: 100%;
+    background: white;
+    gap: 1.5em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.datos_tarjeta:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dato_tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dato_tarjeta:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.dato_tarjeta label {
+    font-weight: 600;
+    font-size: 13px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dato_valor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.dato_valor span,
+.dato_valor strong {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+    padding: 8px 12px;
+    border-radius: 10px;
+    word-break: break-all;
+}
+
+.saldo_valor {
+    background: #4f5052;
+    border-radius: 10px;
+    padding: 4px 8px;
+}
+
+.saldo_valor strong {
+    background: transparent;
+    font-size: 1.2rem;
+    color: #d3d7dc;
+}
+
+.btn_copy{
+    display: flex;
+}
+
+.btn_consultar_pin, 
+.btn_gestionar_pin, 
+.btn_copy {
+    align-items: center;
+    gap: 6px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+.btn_consultar_pin:hover, 
+.btn_gestionar_pin:hover, 
+.btn_copy:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+    transform: scale(0.96);
+}
+
+.btn_copy img {
+    width: 16px;
+    height: 16px;
+    position: static;
+}
+
+.btn_ocultar_saldo {
+    background: #ddd;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_ocultar_saldo #eye_img{
+    width: 20px;
+}
+.btn_ocultar_saldo:hover {
+    background-color: #f0f0f0;
+    transform: scale(0.95);
+}
+
+.limites_valores {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    background: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 12px;
+}
+
+.limites_valores span {
+    font-size: 13px;
+    color: #555;
+}
+
+.limites_valores strong {
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+
+.estado {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 30px;
+    width: fit-content;
+}
+
+
+
+.estado_tarjeta :last-child{
+    display: flex;
+    justify-content: space-around;
+}
+
+.estado {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.estado.inactivo {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.btn_cambiar_estado {
+    margin-left: 10px;
+    padding: 5px 14px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.btn_cambiar_estado:hover {
+    background-color: #f0f0f0;
+    transform: scale(0.96);
+}
+
+.contenedor_movimientos {
+    background: white;
+    margin: auto;
+    margin-top: 20px;
+
+    width: 100%;
+    border-radius: 20px;
+    padding: 1.5em;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    width: 90%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+
+.movimientos_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5em;
+    padding-bottom: 0.75em;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.movimientos_header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+.btn_ver_todos {
+    background: transparent;
+    border: none;
+    color: #3b82f6;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn_ver_todos:hover {
+    background: #eff6ff;
+}
+
+.movimientos_tabla_header {
+    display: grid;
+    grid-template-columns: 50px 1fr 120px;
+    padding: 10px 12px;
+    background: #f9fafb;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.lista_movimientos {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 450px;
+    overflow-y: auto;
+}

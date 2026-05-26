@@ -6,7 +6,6 @@
     padding: 20px;
 }
 
-/* Contenedor del formulario (lado izquierdo) */
 .contenedor_formulario {
     display: flex;
     flex-direction: column;
@@ -19,7 +18,6 @@
     gap: 1.5em;
 }
 
-/* Tarjeta dentro del formulario */
 .contenedor_formulario .tarjeta {
     width: 100%;
     margin: 0 auto;
@@ -91,7 +89,6 @@
     color: white;
 }
 
-/* Contenedor de contactos (lado derecho) */
 .contactos {
     border: solid 2px #CCC;
     padding: 1.5em;
@@ -141,7 +138,6 @@
     margin-top: 5px;
 }
 
-/* Estilo para los contactos (se llenan con JS) */
 .contacto_item {
     display: flex;
     justify-content: space-between;

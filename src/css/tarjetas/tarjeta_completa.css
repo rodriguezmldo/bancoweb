@@ -1,0 +1,159 @@
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #0a192f;
+    border-radius: 24px;
+    height: 10%;
+    max-height: 50%;
+    padding: 1.5em;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: white;
+    position: relative;
+}
+
+.tarjeta_encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.tipo_tarjeta {
+    font-size: 1em;
+    opacity: 0.75;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.icono_tarjeta,
+#visa_img {
+    width: 48px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+
+.tarjeta_titular {
+    font-size: 1em;
+    letter-spacing: 1.2px;
+    padding-top: 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+
+.tarjeta_numero {
+    align-items: center;
+    font-size: 1.25rem;
+    letter-spacing: 2.5px;
+    font-family: 'Courier New', 'Monaco', monospace;
+    font-weight: 500;
+    margin: 1em 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.numero_unico{
+    margin-top: 0.5em;
+}
+
+.tarjeta_numero span {
+    margin-top: 1em;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 6px;
+    border-radius: 8px;
+}
+
+.tarjeta_datos {
+    display: flex;
+    gap: 35px;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.tarjeta_fecha label,
+.tarjeta_cvv label {
+    display: block;
+    font-size: 9px;
+    opacity: 0.65;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tarjeta_fecha span,
+.tarjeta_cvv span {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.tarjeta_cvv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tarjeta_cvv span {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-family: monospace;
+    letter-spacing: 2px;
+}
+
+.btn_ver_cvv {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    color: white;
+    backdrop-filter: blur(4px);
+}
+
+.btn_ver_cvv:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}
+
+.btn_ver_cvv:active {
+    transform: scale(0.95);
+}
+
+.tarjeta #eye_img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.tarjeta #eye_img:hover {
+    opacity: 1;
+}
+
+
+/* Tarjeta de Débito */
+.tarjeta.debito {
+    background: linear-gradient(135deg, #0a192f 0%, #0f2842 100%);
+}
+
+/* Tarjeta de Crédito */
+.tarjeta.credito {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a3a 100%);
+}
+
+/* Tarjeta Virtual */
+.tarjeta.virtual {
+    background: linear-gradient(135deg, #1b4332 0%, #0d3b2e 100%);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+}
