@@ -68,14 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Su contraseña ha sido restablecida con éxito. Ya puede iniciar sesión.");
                 
                 // Redirigir al inicio de sesión
-                window.location.href = "login.html"; // Ajusta la ruta a tu archivo de login
+                window.location.href = "login.html"; 
             }
         }
     });
 
     // --- BOTONES DE CANCELAR ---
     btnCancelarCorreo.addEventListener("click", () => {
-        window.location.href = "login.html"; // Ajusta la ruta a tu archivo de login
+        window.location.href = "login.html"; 
     });
 
     btnCancelarPassword.addEventListener("click", () => {

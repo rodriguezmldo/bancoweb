@@ -140,20 +140,3 @@
 .tarjeta #eye_img:hover {
     opacity: 1;
 }
-
-
-/* Tarjeta de Débito */
-.tarjeta.debito {
-    background: linear-gradient(135deg, #0a192f 0%, #0f2842 100%);
-}
-
-/* Tarjeta de Crédito */
-.tarjeta.credito {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a3a 100%);
-}
-
-/* Tarjeta Virtual */
-.tarjeta.virtual {
-    background: linear-gradient(135deg, #1b4332 0%, #0d3b2e 100%);
-    border: 1px solid rgba(74, 222, 128, 0.3);
-}

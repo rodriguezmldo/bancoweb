@@ -1,7 +1,3 @@
-// ============================================
-// MENÚ DESPLEGABLE PARA NAV PAGES
-// ============================================
-
 document.addEventListener('DOMContentLoaded', function() {
     const currentPage = window.location.pathname.toLowerCase();
     const paginasPublicas = [
@@ -14,10 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const esPaginaPublica = paginasPublicas.some(pagina => currentPage.includes(pagina));
     
-    // login usuario
     const estaLogueado = localStorage.getItem("idUsuarioActivo") !== null;
 
-    //dependiendo si inicio sesion o no se mostrar el menu completo o no
     if (esPaginaPublica && !estaLogueado) {
         return; 
     }
@@ -62,29 +56,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 { nombre: 'Términos y condiciones', url: '/src/pages/otros/terminos_condiciones/terminos_condiciones.html' }
             ]
         }
-
-        
     ];
 
-    // Obtener el ul de la navegación
     const navUl = document.querySelector('.nav_pages ul');
     if (!navUl) return;
 
-    // Convertir los li existentes en elementos con submenú
     const lis = navUl.querySelectorAll('li');
 
     menuItems.forEach((item, index) => {
-
-        // Saltar el primer li (Inicio)
         const li = lis[index + 1];
 
         if (li) {
-
-            // Agregar clase para identificar
             li.classList.add('menu-item');
             li.setAttribute('data-menu', item.id);
 
-            // Crear submenú
             const submenuDiv = document.createElement('div');
             submenuDiv.className = 'submenu';
 
@@ -104,30 +89,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // ============================================
-    // FUNCIONALIDAD DE CERRAR SESIÓN
-    // ============================================
-    
-    // Función para cerrar sesión
     function cerrarSesion() {
-        // Mostrar confirmación opcional
         if (confirm('¿Estás seguro de que deseas cerrar sesión?')) {
-            // Limpiar todo el localStorage
             localStorage.clear();
-            
-            // Opcional: limpiar sessionStorage también
             sessionStorage.clear();
-            
             console.log('Sesión cerrada - LocalStorage limpiado');
-            
-            // Redirigir a la página de inicio de sesión
-            // CAMBIA ESTA URL POR LA DE TU PÁGINA DE LOGIN
             window.location.href = '/src/pages/login/login.html'; 
-            
         }
     }
     
-    // Agregar event listeners a los botones de cerrar sesión
     function agregarEventoCerrarSesion() {
         const botonesCerrar = document.querySelectorAll('.cerrar-sesion-btn');
         botonesCerrar.forEach(boton => {
@@ -138,10 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Inicializar eventos después de crear los elementos
     setTimeout(agregarEventoCerrarSesion, 100);
     
-    // También podemos usar MutationObserver para asegurar que los eventos se apliquen
     const observer = new MutationObserver(function(mutations) {
         agregarEventoCerrarSesion();
     });
@@ -152,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     const styles = `
-        /* Estilos para el menú con submenú */
         .nav_pages li.menu-item {
             position: relative;
         }
@@ -206,7 +173,6 @@ document.addEventListener('DOMContentLoaded', function() {
             color: white;
         }
         
-        /* Estilo especial para el botón de cerrar sesión */
         .nav_pages .submenu .cerrar-sesion-btn {
             color: #ff6b6b;
             border-top: 1px solid #4a4a4e;
@@ -226,7 +192,6 @@ document.addEventListener('DOMContentLoaded', function() {
             border-radius: 0 0 12px 12px;
         }
         
-        /* Flecha indicadora */
         .menu-item > a::after {
             content: ' ▼';
             font-size: 10px;

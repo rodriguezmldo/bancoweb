@@ -1,14 +1,6 @@
-// ============================================
-// TARJETAS MINI - Para páginas de operaciones
-// Adaptado a la estructura de datos_tarjetas.js
-// ============================================
-
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // Variable global para la tarjeta actualmente seleccionada
     let tarjetaSeleccionada = 'debito';
     
-    // Función para obtener todas las tarjetas disponibles
     function obtenerTodasTarjetas() {
         if (typeof datosTarjetas === 'undefined') {
             console.warn("⚠️ datosTarjetas no está definido");
@@ -21,13 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
     
-    // Función para obtener la tarjeta activa
     function obtenerTarjetaActiva(tipo = tarjetaSeleccionada) {
         const todas = obtenerTodasTarjetas();
         return todas[tipo] || todas.debito;
     }
     
-    // Función para obtener el saldo según el tipo de tarjeta
     function obtenerSaldo(tarjeta, tipo) {
         if (tipo === 'credito') {
             const limite = tarjeta.limiteCredito || 0;
@@ -38,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Función para obtener el texto del moneda según el tipo
     function obtenerTextoMoneda(tipo) {
         switch(tipo) {
             case 'credito': return 'disponible';
@@ -47,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Función para formatear número de tarjeta
     function formatearNumeroTarjeta(numero) {
         if (!numero) return "**** ****";
         const limpio = numero.replace(/\s/g, '');
@@ -55,14 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return `**** ${ultimos4}`;
     }
     
-    // Función para obtener últimos 4 dígitos
     function obtenerUltimos4Digitos(numero) {
         if (!numero) return "****";
         const limpio = numero.replace(/\s/g, '');
         return limpio.slice(-4);
     }
     
-    // Función para formatear saldo
     function formatearSaldo(saldo) {
         return new Intl.NumberFormat('es-MX', {
             style: 'currency',
@@ -72,19 +58,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }).format(saldo);
     }
     
-    // Función para actualizar la tarjeta mini
     function actualizarTarjetaMini(tipo = tarjetaSeleccionada) {
         const tarjeta = obtenerTarjetaActiva(tipo);
         
         if (!tarjeta) {
-            console.warn(`⚠️ No se encontraron datos para tarjeta ${tipo}`);
+            console.warn(`No se encontraron datos para tarjeta ${tipo}`);
             return;
         }
         
         const tarjetasMini = document.querySelectorAll('.tarjeta');
         
         if (tarjetasMini.length === 0) {
-            console.warn("⚠️ No se encontraron elementos .tarjeta en la página");
+            console.warn("No se encontraron elementos .tarjeta en la página");
             return;
         }
         
@@ -130,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(`✅ Tarjeta ${tipo} actualizada - Saldo: ${formatearSaldo(saldoMostrar)}`);
     }
     
-    // Función para actualizar CLABE
     function actualizarCLABE(tarjeta) {
         const clabeElement = document.querySelector('.clabe_numero');
         if (clabeElement && tarjeta.clabe) {
@@ -143,7 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Función para actualizar selectores
     function actualizarSelectoresCuenta(tarjetaActual, tipoActual) {
         const selectCuenta = document.getElementById('cuentaOrigen');
         if (!selectCuenta) return;
@@ -179,7 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Función para fondos disponibles
     function actualizarFondosDisponibles(tarjeta, tipo) {
         let fondosContainer = document.querySelector('.fondos-disponibles');
         const campoMonto = document.querySelector('.campo:has(input[type="text"]), .campo:has(input[type="number"])');
@@ -190,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 fondosContainer.className = 'campo fondos-disponibles';
                 fondosContainer.style.cssText = 'margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 8px;';
                 const label = document.createElement('label');
-                label.textContent = '💰 Fondos disponibles:';
+                label.textContent = 'Fondos disponibles:';
                 label.style.fontWeight = 'bold';
                 const valorSpan = document.createElement('span');
                 valorSpan.className = 'fondos-valor';
@@ -208,21 +190,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Función para crear selector de tarjeta en página de retiro (VERSIÓN SIMPLIFICADA)
     function crearSelectorTarjetaRetiro() {
-        // Solo ejecutar en la página de retiro
         if (!window.location.href.includes('retirar.html')) return;
-        
-        // Verificar si ya existe el selector
         if (document.querySelector('.selector-tarjeta-retiro')) return;
         
-        // Buscar el contenedor donde está la tarjeta
         const contenedorPrincipal = document.querySelector('.contenedor_principal');
         const tarjetaElement = document.querySelector('.contenedor_principal .tarjeta');
         
         if (!contenedorPrincipal || !tarjetaElement) return;
         
-        // Crear el selector
         const selectorContainer = document.createElement('div');
         selectorContainer.className = 'selector-tarjeta-retiro';
         selectorContainer.style.cssText = `
@@ -236,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         selectorContainer.innerHTML = `
             <label style="display: block; margin-bottom: 10px; font-weight: bold; color: #333;">
-                💳 Seleccionar tarjeta:
+                Seleccionar tarjeta:
             </label>
             <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
                 <button type="button" class="btn-selector-tarjeta" data-tipo="debito" 
@@ -257,16 +233,13 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
         
-        // Insertar el selector DESPUÉS de la tarjeta (no mover la tarjeta)
         tarjetaElement.insertAdjacentElement('afterend', selectorContainer);
         
-        // Asegurar que el contenedor principal tenga flex para mantener layout
         contenedorPrincipal.style.display = 'flex';
         contenedorPrincipal.style.gap = '30px';
         contenedorPrincipal.style.alignItems = 'flex-start';
         contenedorPrincipal.style.flexWrap = 'wrap';
         
-        // Event listeners para los botones
         const botones = selectorContainer.querySelectorAll('.btn-selector-tarjeta');
         botones.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -275,7 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 actualizarTarjetaMini(tipo);
                 actualizarSelectoresCuenta(obtenerTarjetaActiva(tipo), tipo);
                 
-                // Efecto visual
                 botones.forEach(b => {
                     b.style.opacity = '0.7';
                     b.style.transform = 'scale(0.95)';
@@ -294,7 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
         
-        // Seleccionar débito por defecto
         const btnDebito = selectorContainer.querySelector('.btn-selector-tarjeta[data-tipo="debito"]');
         if (btnDebito) {
             btnDebito.style.opacity = '1';
@@ -302,7 +273,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Función para manejar mostrar/ocultar saldo
     function initToggleSaldo() {
         const ojos = document.querySelectorAll('#eye_img');
         ojos.forEach(ojo => {
@@ -342,7 +312,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Función para copiar texto
     window.copiarCLABE = function() {
         const btn = event?.currentTarget;
         const textoACopiar = btn?.getAttribute('data-copy');
@@ -361,7 +330,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
     
-    // Función para selector de cuenta
     function initSelectorCuenta() {
         const selectCuenta = document.getElementById('cuentaOrigen');
         if (selectCuenta) {
@@ -375,7 +343,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Función para código de retiro
     function initCodigoRetiro() {
         const btnSolicitar = document.getElementById('btnSolicitarCodigo');
         if (btnSolicitar) {
@@ -408,7 +375,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Inicializar según la página
     function init() {
         const url = window.location.href;
         
@@ -421,7 +387,6 @@ document.addEventListener("DOMContentLoaded", () => {
             initSelectorCuenta();
         }
         else if (url.includes('retirar.html')) {
-            // Primero actualizar la tarjeta, luego crear el selector
             actualizarTarjetaMini('debito');
             crearSelectorTarjetaRetiro();
             initCodigoRetiro();
