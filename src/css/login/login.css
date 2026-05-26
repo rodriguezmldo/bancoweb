@@ -1,16 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
 
 body {
     background-color: #fafafa;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
+    margin: 0;
 }
 
 .login {
@@ -21,6 +15,7 @@ body {
     border: 2px solid #e0e0e0;
     position: relative; 
     text-align: center;
+    margin: auto; 
 }
 
 

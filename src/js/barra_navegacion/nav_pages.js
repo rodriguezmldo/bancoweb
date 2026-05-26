@@ -3,8 +3,27 @@
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = window.location.pathname.toLowerCase();
+    const paginasPublicas = [
+        'login.html',
+        'login_restablecer.html',
+        'quienes_somos.html',
+        'terminos_condiciones.html',
+        'soporte.html'
+    ];
     
-    // Crear estructura para submenús
+    const esPaginaPublica = paginasPublicas.some(pagina => currentPage.includes(pagina));
+    
+    // Verificamos si existe un usuario logueado en la memoria
+    const estaLogueado = localStorage.getItem("idUsuarioActivo") !== null;
+    
+    // Si es una página pública Y NO ha iniciado sesión, detenemos el script (no habrá submenús)
+    // Si SÍ ha iniciado sesión, el script continuará para agregarle los submenús a la nueva barra
+    if (esPaginaPublica && !estaLogueado) {
+        return; 
+    }
+    
+    // ... [El resto de tu código "const menuItems = ..." se queda exactamente igual] ...
     const menuItems = [
         {
             id: 'operaciones',
@@ -41,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
             texto: 'Más',
             submenu: [
                 { nombre: 'Quiénes somos', url: '/src/pages/otros/quienes_somos/quienes_somos.html' },
-                { nombre: 'Soporte', url: 'info/soporte.html' },
-                { nombre: 'Términos y condiciones', url: 'info/terminos.html' }
+                { nombre: 'Soporte', url: '/src/pages/otros/soporte/soporte.html' },
+                { nombre: 'Términos y condiciones', url: '/src/pages/otros/terminos_condiciones/terminos_condiciones.html' }
             ]
         }
 
