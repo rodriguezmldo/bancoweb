@@ -32,8 +32,8 @@ const datosTarjetas = {
     credito: {
         tipo: "Crédito",
         titular: "HECTOR HERNANDEZ PEREZ",
-        numero: "9090 9809 8023 2311",
-        numeroCompacto: "9090980980232311",
+        numero: "9090 9809 8023 2432",
+        numeroCompacto: "9090980980232432",
         fechaValidez: "02/34",
         cvv: "456",
         limiteCredito: 50000,
