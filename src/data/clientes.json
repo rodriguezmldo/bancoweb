@@ -1,0 +1,40 @@
+[
+  {
+    "id_usuario": 1,
+    "nombre_completo": "Juan Pérez López",
+    "rfc": "PELJ990101XYZ",
+    "telefono": "5512345678",
+    "direccion": {
+      "calle": "Av. Reforma",
+      "numero_exterior": "123",
+      "numero_interior": "B",
+      "codigo_postal": "72000",
+      "ciudad": "Puebla",
+      "estado": "Puebla"
+    },
+    "datos_bancarios": {
+      "no_cuenta": "1234567890",
+      "clabe": "012345678901234567",
+      "no_tarjeta": "4152311122223333"
+    }
+  },
+  {
+    "id_usuario": 2,
+    "nombre_completo": "María García Gómezss",
+    "rfc": "GAGM850505ABC",
+    "telefono": "5598765432",
+    "direccion": {
+      "calle": "Calle 5 de Mayo",
+      "numero_exterior": "45",
+      "numero_interior": "",
+      "codigo_postal": "11000",
+      "ciudad": "CDMX",
+      "estado": "CDMX"
+    },
+    "datos_bancarios": {
+      "no_cuenta": "0987654321",
+      "clabe": "012098765432198765",
+      "no_tarjeta": "4152311199998888"
+    }
+  }
+]
