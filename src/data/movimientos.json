@@ -1,0 +1,50 @@
+[
+  {
+    "id_usuario": 1,
+    "saldo_actual": 19450.00,
+    "historial": [
+      {
+        "id_transaccion": "TXN-00101",
+        "fecha": "2026-05-15T10:30:00",
+        "tipo": "abono",
+        "categoria": "deposito",
+        "concepto": "Depósito Nómina",
+        "monto": 8500.00,
+        "saldo_despues_de_transaccion": 21850.00
+      },
+      {
+        "id_transaccion": "TXN-00102",
+        "fecha": "2026-05-20T14:15:00",
+        "tipo": "cargo",
+        "categoria": "compra",
+        "concepto": "Compra Amazon",
+        "monto": 2550.00,
+        "saldo_despues_de_transaccion": 19300.00
+      },
+      {
+        "id_transaccion": "TXN-00103",
+        "fecha": "2026-05-22T09:00:00",
+        "tipo": "cargo",
+        "categoria": "pago_servicio",
+        "concepto": "Pago de Servicio Eléctrico",
+        "monto": 450.00,
+        "saldo_despues_de_transaccion": 18850.00
+      }
+    ]
+  },
+  {
+    "id_usuario": 2,
+    "saldo_actual": 5200.00,
+    "historial": [
+      {
+        "id_transaccion": "TXN-00201",
+        "fecha": "2026-05-21T11:20:00",
+        "tipo": "cargo",
+        "categoria": "transferencia",
+        "concepto": "Transferencia SPEI a Juan Pérez",
+        "monto": 1000.00,
+        "saldo_despues_de_transaccion": 5200.00
+      }
+    ]
+  }
+]
